@@ -3,27 +3,28 @@ package io.github.skulltah.colorseek.GameObjects;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
+import io.github.skulltah.colorseek.Constants.Textures;
+
 public class Food extends Scrollable {
     public static final int FOOD_SIZE = 6;
     public boolean isEnabled;
     private Rectangle food;
-    private ScrollHandler scrollHandler;
     private double chance; // Decides whether this food item is enabled or not
     private FoodType foodType;
+    private Pacman pacman;
 
-    public Food(float x, float y, float scrollSpeed, ScrollHandler scrollHandler) {
-        super(x, y, io.github.skulltah.colorseek.Constants.Textures.FOOD_SIZE, io.github.skulltah.colorseek.Constants.Textures.FOOD_SIZE, scrollSpeed);
-        this.scrollHandler = scrollHandler;
+    public Food(float x, float y, float scrollSpeed, Pacman pacman) {
+        super(x, y, Textures.FOOD_SIZE, Textures.FOOD_SIZE, scrollSpeed);
+
+        this.pacman = pacman;
 
         food = new Rectangle();
-        chance = .08f;
+        chance = .06f;
 
-//        isEnabled = scrollHandler.getDistanceToClosestPipe(getX()) + 10 > 20;
-//        if (isEnabled)
         isEnabled = Math.random() < chance;
 
         double random = Math.random();
-        if (random < .015f)
+        if (random < .01f)
             foodType = FoodType.Super;
         else if (random < .07f)
             foodType = FoodType.Poison;
@@ -46,11 +47,23 @@ public class Food extends Scrollable {
     public void reset(float newX) {
         super.reset(newX);
 
-        float distanceToClosestPipe = scrollHandler.getDistanceToClosestPipe(newX);
-        isEnabled = distanceToClosestPipe > 20 || distanceToClosestPipe == -1;
+        isEnabled = Math.random() < (pacman.getIsSuper() ? chance * 5 : chance);
 
-        if (isEnabled)
-            isEnabled = Math.random() < chance;
+        if (!isEnabled) return;
+
+        if (pacman.getIsSuper())
+            foodType = FoodType.White;
+        else {
+            double random = Math.random();
+            if (random < .05f)
+                foodType = FoodType.Super;
+            else if (random < .07f)
+                foodType = FoodType.Poison;
+            else if (random < .7f)
+                foodType = FoodType.Fat;
+            else
+                foodType = FoodType.Healthy;
+        }
     }
 
     public void onRestart(float x, float scrollSpeed) {
@@ -77,6 +90,6 @@ public class Food extends Scrollable {
     }
 
     public enum FoodType {
-        Fat, Healthy, Poison, Super
+        Fat, Healthy, Poison, Super, White
     }
 }

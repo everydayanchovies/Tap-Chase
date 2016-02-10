@@ -6,15 +6,13 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.Timer;
 
-import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
-import aurelienribon.tweenengine.TweenCallback;
 import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
 import io.github.skulltah.colorseek.CS.CSGame;
 import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
+import io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor;
 
 public class SplashScreen implements Screen {
 
@@ -41,9 +39,9 @@ public class SplashScreen implements Screen {
         sprite.setPosition((width / 2) - (sprite.getWidth() / 2), (height / 2)
                 - (sprite.getHeight() / 2));
 
-        setupTween();
-
         batcher = new SpriteBatch();
+
+//        setupTween();
 
         Preferences prefs = Gdx.app.getPreferences("generalPrefs");
         boolean hasOfferedToSignIn = prefs.getBoolean("hasOfferedToSignIn", false);
@@ -56,16 +54,18 @@ public class SplashScreen implements Screen {
             }
         }
 
-        Timer.schedule(new Timer.Task() {
-            @Override
-            public void run() {
-                setupTween2();
-            }
-        }, .8f);
+        game.setScreen(new GameScreen(game));
+
+//        Timer.schedule(new Timer.Task() {
+//            @Override
+//            public void run() {
+//                game.setScreen(new GameScreen(game));
+//            }
+//        }, .8f);
     }
 
     private void setupTween() {
-        Tween.registerAccessor(Sprite.class, new io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor());
+        Tween.registerAccessor(Sprite.class, new SpriteAccessor());
         manager = new TweenManager();
 
 //        TweenCallback cb = new TweenCallback() {
@@ -75,28 +75,10 @@ public class SplashScreen implements Screen {
 //            }
 //        };
 
-        Tween.to(sprite, io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor.ALPHA, .6f).target(1)
+        Tween.to(sprite, SpriteAccessor.ALPHA, .6f).target(1)
                 .ease(TweenEquations.easeInOutQuad)
 //                .repeatYoyo(1, 1)
 //                .setCallback(cb).setCallbackTriggers(TweenCallback.COMPLETE)
-                .start(manager);
-    }
-
-    private void setupTween2() {
-        Tween.registerAccessor(Sprite.class, new io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor());
-        manager = new TweenManager();
-
-        TweenCallback cb = new TweenCallback() {
-            @Override
-            public void onEvent(int type, BaseTween<?> source) {
-                game.setScreen(new GameScreen(game));
-            }
-        };
-
-        Tween.from(sprite, io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor.ALPHA, .6f).target(1)
-                .ease(TweenEquations.easeInOutQuad)
-//                .repeatYoyo(1, 1)
-                .setCallback(cb).setCallbackTriggers(TweenCallback.COMPLETE)
                 .start(manager);
     }
 

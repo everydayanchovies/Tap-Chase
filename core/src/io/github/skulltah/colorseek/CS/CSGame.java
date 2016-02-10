@@ -4,13 +4,16 @@ import com.badlogic.gdx.Game;
 
 import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
 import io.github.skulltah.colorseek.CSHelpers.PlayServices;
+import io.github.skulltah.colorseek.CSHelpers.PowerupManager;
 import io.github.skulltah.colorseek.Screens.SplashScreen;
 
 public class CSGame extends Game {
     public static PlayServices playServices;
+    public PowerupManager powerupManager;
 
     public CSGame(PlayServices playServices) {
         CSGame.playServices = playServices;
+        powerupManager = new PowerupManager();
     }
 
     @Override

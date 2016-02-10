@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.badlogic.gdx.math.Rectangle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,44 +20,53 @@ import aurelienribon.tweenengine.TweenManager;
 import io.github.skulltah.colorseek.CS.CSGame;
 import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
 import io.github.skulltah.colorseek.CSHelpers.InputHandler;
+import io.github.skulltah.colorseek.CSHelpers.Utils;
 import io.github.skulltah.colorseek.Constants.Textures;
 import io.github.skulltah.colorseek.GameObjects.Food;
+import io.github.skulltah.colorseek.GameObjects.GodlikeShape;
 import io.github.skulltah.colorseek.GameObjects.Pacman;
 import io.github.skulltah.colorseek.GameObjects.Pipe;
+import io.github.skulltah.colorseek.GameObjects.Powerup;
 import io.github.skulltah.colorseek.GameObjects.ScrollHandler;
 import io.github.skulltah.colorseek.TweenAccessors.ValueAccessor;
 import io.github.skulltah.colorseek.ui.SimpleButton;
 
 public class GameRenderer {
 
+    private static final int BACKGROUND_TILE_SIZE = 100;
+    private final float logoScale = 1f;
     private GameWorld myWorld;
     private OrthographicCamera cam;
     private ShapeRenderer shapeRenderer;
-
     private SpriteBatch batcher;
-
     private int midPointY;
-
     // Game Objects
     private Pacman pacman;
     private ScrollHandler scroller;
     private Pipe pipe1, pipe2, pipe3;
     private List<Pipe> pipes;
     private Food[] foodPool;
-//    private Grass[] groundPool;
-
+    private Powerup[] powerupPool;
+    private GodlikeShape[] godlikeShapes;
     // Game Assets
     private TextureRegion bg, pacmanMid, ready, help,
-            zbLogo, gameOver, highScore, scoreboard, star, noStar;
-    private Animation pacmanAnimation, pacmanAnimationSuper, food1Animation, food2Animation, food3Animation, food4Animation, pipeAnimation, pipeTopUpAnimation, pipeTopDownAnimation, groundAnimation;
-
+            zbLogo, gameOver, highScore, scoreboard, star, noStar, food1,
+            square, triangle, circle;
+    private TextureRegion[] backgroundTiles;
+    private Animation pacmanAnimation, pacmanAnimationSuper,
+    //            food1Animation,
+    food2Animation, food3Animation, food4Animation, food5Animation,
+            powerupSpeedUpAnimation,
+    //            powerupSpeedDownAnimation,
+    powerupPipeGapAnimation,
+            pipeAnimation, pipeTopUpAnimation, pipeTopDownAnimation;
     // Tween stuff
     private TweenManager manager;
     private io.github.skulltah.colorseek.TweenAccessors.Value alpha = new io.github.skulltah.colorseek.TweenAccessors.Value();
-
     // Buttons
     private List<SimpleButton> menuButtons;
     private Color transitionColor;
+    private int[][] backgroundTileMap;
 
     public GameRenderer(GameWorld world, int gameHeight, int midPointY) {
         myWorld = world;
@@ -78,6 +88,8 @@ public class GameRenderer {
 
         transitionColor = new Color();
         prepareTransition(0, 0, 0, .5f);
+
+        generateBackground();
     }
 
     private void initGameObjects() {
@@ -94,7 +106,8 @@ public class GameRenderer {
         }};
 
         foodPool = scroller.getFoodPool();
-//        groundPool = scroller.getGroundPool();
+        powerupPool = scroller.getPowerupPool();
+        godlikeShapes = scroller.getGodlikeShapes();
     }
 
     private void initAssets() {
@@ -110,29 +123,23 @@ public class GameRenderer {
         scoreboard = AssetLoader.scoreboard;
         star = AssetLoader.star;
         noStar = AssetLoader.noStar;
-        food1Animation = AssetLoader.food1Animation;
+//        food1Animation = AssetLoader.food1Animation;
+        food1 = AssetLoader.food1;
         food2Animation = AssetLoader.food2Animation;
         food3Animation = AssetLoader.food3Animation;
         food4Animation = AssetLoader.food4Animation;
+        food5Animation = AssetLoader.food5Animation;
+        powerupPipeGapAnimation = AssetLoader.powerupPipeGapAnimation;
+        powerupSpeedUpAnimation = AssetLoader.powerupSpeedUpAnimation;
+//        powerupSpeedDownAnimation = AssetLoader.powerupSpeedDownAnimation;
         pipeAnimation = AssetLoader.pipeAnimation;
         pipeTopDownAnimation = AssetLoader.pipeTopDownAnimation;
         pipeTopUpAnimation = AssetLoader.pipeTopUpAnimation;
-//        groundAnimation = AssetLoader.groundAnimation;
+        backgroundTiles = AssetLoader.backgroundTiles;
+        square = AssetLoader.square;
+        triangle = AssetLoader.triangle;
+        circle = AssetLoader.circle;
     }
-
-//    private void drawGrass() {
-//        batcher.draw(grass, frontGrass.getX(), frontGrass.getY(),
-//                frontGrass.getWidth(), frontGrass.getHeight());
-//        batcher.draw(grass, backGrass.getX(), backGrass.getY(),
-//                backGrass.getWidth(), backGrass.getHeight());
-//    }
-
-//    private void drawGround(float runTime) {
-//        for (int i = 1; i < groundPool.length; i++) {
-//            batcher.draw(groundAnimation.getKeyFrame(runTime), groundPool[i].getX(), groundPool[i].getY(), 48 / 2.0f,
-//                    5 / 2.0f, 48, 5, 1, 1, 0);
-//        }
-//    }
 
     private void drawPipeTops(float runTime) {
         for (Pipe pipe : pipes) {
@@ -140,14 +147,14 @@ public class GameRenderer {
                     pipe.getY() + pipe.getHeight() - Textures.PIPE_TOP_HEIGHT, Textures.PIPE_TOP_WIDTH / 2.0f,
                     Textures.PIPE_TOP_HEIGHT / 2.0f, Textures.PIPE_TOP_WIDTH, Textures.PIPE_TOP_HEIGHT, 1, 1, 0);
             batcher.draw(pipeTopDownAnimation.getKeyFrame(runTime), pipe.getX(),
-                    pipe.getY() + pipe.getHeight() + (pipe.isDoubleGaped() ? Pipe.VERTICAL_GAP * 3 : Pipe.VERTICAL_GAP), Textures.PIPE_TOP_WIDTH / 2.0f,
+                    pipe.getY() + pipe.getHeight() + (pipe.isDoubleGaped() ? pipe.getVerticalGap() * 3 : pipe.getVerticalGap()), Textures.PIPE_TOP_WIDTH / 2.0f,
                     Textures.PIPE_TOP_HEIGHT / 2.0f, Textures.PIPE_TOP_WIDTH, Textures.PIPE_TOP_HEIGHT, 1, 1, 0);
             if (pipe.isDoubleGaped()) {
                 batcher.draw(pipeTopUpAnimation.getKeyFrame(runTime), pipe.getX(),
-                        (pipe.getY() + (Pipe.VERTICAL_GAP * 2)) + pipe.getHeight() - Textures.PIPE_TOP_HEIGHT, Textures.PIPE_TOP_WIDTH / 2.0f,
+                        (pipe.getY() + (pipe.getVerticalGap() * 2)) + pipe.getHeight() - Textures.PIPE_TOP_HEIGHT, Textures.PIPE_TOP_WIDTH / 2.0f,
                         Textures.PIPE_TOP_HEIGHT / 2.0f, Textures.PIPE_TOP_WIDTH, Textures.PIPE_TOP_HEIGHT, 1, 1, 0);
                 batcher.draw(pipeTopDownAnimation.getKeyFrame(runTime), pipe.getX(),
-                        pipe.getY() + Pipe.VERTICAL_GAP + pipe.getHeight() - Textures.PIPE_TOP_HEIGHT, Textures.PIPE_TOP_WIDTH / 2.0f,
+                        pipe.getY() + pipe.getVerticalGap() + pipe.getHeight() - Textures.PIPE_TOP_HEIGHT, Textures.PIPE_TOP_WIDTH / 2.0f,
                         Textures.PIPE_TOP_HEIGHT / 2.0f, Textures.PIPE_TOP_WIDTH, Textures.PIPE_TOP_HEIGHT, 1, 1, 0);
             }
         }
@@ -159,13 +166,38 @@ public class GameRenderer {
                     pipe.getY(), pipe.getWidth() / 2.0f,
                     pipe.getHeight() / 2.0f, pipe.getWidth(), pipe.getHeight(), 1, 1, 0);
             batcher.draw(pipeAnimation.getKeyFrame(runTime), pipe.getX(),
-                    pipe.getY() + pipe.getHeight() + (pipe.isDoubleGaped() ? Pipe.VERTICAL_GAP * 3 : Pipe.VERTICAL_GAP), pipe1.getWidth() / 2.0f,
+                    pipe.getY() + pipe.getHeight() + (pipe.isDoubleGaped() ? pipe.getVerticalGap() * 3 : pipe.getVerticalGap()), pipe1.getWidth() / 2.0f,
                     pipe.getHeight() / 2.0f, pipe.getWidth(), Gdx.graphics.getHeight(), 1, 1, 0);
             if (pipe.isDoubleGaped()) {
                 batcher.draw(pipeAnimation.getKeyFrame(runTime), pipe.getX(),
-                        pipe.getY() + pipe.getHeight() + Pipe.VERTICAL_GAP, pipe.getWidth() / 2.0f,
-                        pipe.getHeight() / 2.0f, pipe.getWidth(), Pipe.VERTICAL_GAP, 1, 1, 0);
+                        pipe.getY() + pipe.getHeight() + pipe.getVerticalGap(), pipe.getWidth() / 2.0f,
+                        pipe.getHeight() / 2.0f, pipe.getWidth(), pipe.getVerticalGap(), 1, 1, 0);
             }
+        }
+    }
+
+    private void drawPipeHitbox() {
+        for (Pipe pipe : pipes) {
+            Rectangle up = pipe.getPipeUp();
+            Rectangle down = pipe.getPipeDown();
+            Rectangle middle = pipe.getPipeMiddle();
+            Rectangle belowNonlethal = pipe.getPipeDownBelowNonlethal();
+            Rectangle nonlethal = pipe.getPipeDownNonlethal();
+
+            shapeRenderer.begin(ShapeType.Filled);
+            shapeRenderer.setColor(1, 0, 0, .5f);
+            if (up != null)
+                shapeRenderer.rect(up.x, up.y, up.width, up.height);
+            if (down != null)
+                shapeRenderer.rect(down.x, down.y, down.width, down.height);
+            if (middle != null)
+                shapeRenderer.rect(middle.x, middle.y, middle.width, middle.height);
+            if (belowNonlethal != null)
+                shapeRenderer.rect(belowNonlethal.x, belowNonlethal.y, belowNonlethal.width, belowNonlethal.height);
+            shapeRenderer.setColor(.3f, .3f, 0, .2f);
+            if (nonlethal != null)
+                shapeRenderer.rect(nonlethal.x, nonlethal.y, nonlethal.width, nonlethal.height);
+            shapeRenderer.end();
         }
     }
 
@@ -176,7 +208,7 @@ public class GameRenderer {
                     default:
                         break;
                     case Fat:
-                        batcher.draw(food1Animation.getKeyFrame(runTime), foodItem.getX(),
+                        batcher.draw(food1, foodItem.getX(),
                                 foodItem.getY(), foodItem.getWidth() / 2.0f,
                                 foodItem.getHeight() / 2.0f, foodItem.getWidth(), foodItem.getHeight(), 1, 1, 0);
                         break;
@@ -194,6 +226,32 @@ public class GameRenderer {
                         batcher.draw(food4Animation.getKeyFrame(runTime), foodItem.getX(),
                                 foodItem.getY(), foodItem.getWidth() / 2.0f,
                                 foodItem.getHeight() / 2.0f, foodItem.getWidth(), foodItem.getHeight(), 1, 1, 0);
+                        break;
+                    case White:
+                        batcher.draw(food5Animation.getKeyFrame(runTime), foodItem.getX(),
+                                foodItem.getY(), foodItem.getWidth() / 2.0f,
+                                foodItem.getHeight() / 2.0f, foodItem.getWidth(), foodItem.getHeight(), 1, 1, 0);
+                        break;
+                }
+            }
+        }
+    }
+
+    private void drawPowerups(float runTime) {
+        for (Powerup powerup : powerupPool) {
+            if (powerup.isEnabled) {
+                switch (powerup.getType()) {
+                    default:
+                        break;
+                    case PipeGap:
+                        batcher.draw(powerupPipeGapAnimation.getKeyFrame(runTime), powerup.getX(),
+                                powerup.getY(), powerup.getWidth() / 2.0f,
+                                powerup.getHeight() / 2.0f, powerup.getWidth(), powerup.getHeight(), 1, 1, 0);
+                        break;
+                    case SpeedUp:
+                        batcher.draw(powerupSpeedUpAnimation.getKeyFrame(runTime), powerup.getX(),
+                                powerup.getY(), powerup.getWidth() / 2.0f,
+                                powerup.getHeight() / 2.0f, powerup.getWidth(), powerup.getHeight(), 1, 1, 0);
                         break;
                 }
             }
@@ -238,15 +296,12 @@ public class GameRenderer {
     }
 
     private void drawMenuUI() {
-        batcher.draw(zbLogo, 122 / 2 - 45, midPointY - 70,
-                zbLogo.getRegionWidth() / 1.2f, zbLogo.getRegionHeight() / 1.2f);
+        batcher.draw(zbLogo, cam.position.x - zbLogo.getRegionWidth() * logoScale / 2, midPointY - 70,
+                zbLogo.getRegionWidth() * logoScale, zbLogo.getRegionHeight() * logoScale);
 
         menuButtons.get(0).draw(batcher);
         menuButtons.get(2).draw(batcher, CSGame.playServices.isSignedIn());
         menuButtons.get(3).draw(batcher, CSGame.playServices.isSignedIn());
-//        for (SimpleButton button : menuButtons) {
-//            button.draw(batcher);
-//        }
     }
 
     private void drawScoreboard() {
@@ -258,7 +313,7 @@ public class GameRenderer {
         batcher.draw(noStar, 61, midPointY - 15, 10, 10);
         batcher.draw(noStar, 73, midPointY - 15, 10, 10);
 
-        if (myWorld.getScore() > 2) {
+        if (myWorld.getScore() > 5) {
             batcher.draw(star, 73, midPointY - 15, 10, 10);
         }
 
@@ -266,15 +321,15 @@ public class GameRenderer {
             batcher.draw(star, 61, midPointY - 15, 10, 10);
         }
 
-        if (myWorld.getScore() > 50) {
+        if (myWorld.getScore() > 64) {
             batcher.draw(star, 49, midPointY - 15, 10, 10);
         }
 
-        if (myWorld.getScore() > 80) {
+        if (myWorld.getScore() > 98) {
             batcher.draw(star, 37, midPointY - 15, 10, 10);
         }
 
-        if (myWorld.getScore() > 120) {
+        if (myWorld.getScore() > 172) {
             batcher.draw(star, 25, midPointY - 15, 10, 10);
         }
 
@@ -287,6 +342,21 @@ public class GameRenderer {
         AssetLoader.whiteFont.draw(batcher, "" + AssetLoader.getHighScore(),
                 104 - (2.5f * length2), midPointY - 3);
 
+    }
+
+    private void drawGodlikeShapes() {
+        if (godlikeShapes == null)
+            return;
+
+        TextureRegion[] textures = new TextureRegion[]{
+                square, triangle, circle
+        };
+
+        for (int i = 0; i < godlikeShapes.length; i++) {
+            batcher.draw(textures[i], godlikeShapes[i].getX(), godlikeShapes[i].getY(),
+                    godlikeShapes[i].getWidth() / 2.0f, godlikeShapes[i].getHeight() / 2.0f,
+                    godlikeShapes[i].getWidth(), godlikeShapes[i].getHeight(), godlikeShapes[i].getScale(), godlikeShapes[i].getScale(), godlikeShapes[i].getRotation());
+        }
     }
 
     private void drawRetry() {
@@ -319,52 +389,67 @@ public class GameRenderer {
         batcher.draw(highScore, 22, midPointY - 50, 96, 14);
     }
 
+    public void generateBackground() {
+        backgroundTileMap = new int[Gdx.graphics.getWidth() / BACKGROUND_TILE_SIZE][];
+        for (int v = 0; v < backgroundTileMap.length; v++) {
+            backgroundTileMap[v] = new int[Gdx.graphics.getHeight() / BACKGROUND_TILE_SIZE];
+            for (int iv = 0; iv < backgroundTileMap.length; iv++) {
+                backgroundTileMap[v][iv] = Utils.randInt(0, backgroundTiles.length - 1);
+            }
+        }
+    }
+
+    private void drawBackground() {
+        if (backgroundTileMap == null) return;
+
+        // Horizontal
+        for (int ih = 0; ih < backgroundTileMap.length; ih++) {
+            // Vertical
+            for (int iv = 0; iv < backgroundTileMap[ih].length; iv++) {
+                batcher.draw(backgroundTiles[backgroundTileMap[ih][iv]],
+                        ih * BACKGROUND_TILE_SIZE,
+                        iv * BACKGROUND_TILE_SIZE,
+                        BACKGROUND_TILE_SIZE, BACKGROUND_TILE_SIZE);
+            }
+        }
+    }
+
     public void render(float delta, float runTime) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        shapeRenderer.begin(ShapeType.Filled);
-
-        // Draw Background color
-//        Colours.setColour(shapeRenderer, Colours.BACKGROUND_COLOUR);
-//        shapeRenderer.rect(0, 0, Values.GAME_WIDTH, midPointY + 66);
-
-        // Draw Grass
-//        Colours.setColour(shapeRenderer, Colours.GRASS_COLOUR);
-//        shapeRenderer.rect(0, midPointY + 66, 136, 11);
-
-        // Draw Dirt
-//        Colours.setColour(shapeRenderer, Colours.DIRT_COLOUR);
-//        shapeRenderer.rect(0, midPointY + 77, 136, 52);
-
-        shapeRenderer.end();
+//
+//        shapeRenderer.begin(ShapeType.Filled);
+//
+//        shapeRenderer.end();
 
         batcher.begin();
         batcher.disableBlending();
 
-//		batcher.draw(bg, 0, midPointY + 23, 136, 43);
-//        TiledDrawable tile = new TiledDrawable(bg);
-//        tile.draw(batcher, 0, 0, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), 3, 3, 0);
-//        drawGround(runTime);
+        drawBackground();
 
         batcher.enableBlending();
 
         if (myWorld.isRunning() || myWorld.isReady() || myWorld.isGameOver() || myWorld.isHighScore())
             drawFood(runTime);
 
-        batcher.disableBlending();
+        if (myWorld.isRunning() || myWorld.isGameOver() || myWorld.isHighScore())
+            drawPowerups(runTime);
 
-        drawPipes(runTime);
-        drawPipeTops(runTime);
-
-        batcher.enableBlending();
 
         if (myWorld.isRunning()) {
-//            drawFood(runTime);
+            drawGodlikeShapes();
+
+            batcher.disableBlending();
+
+            drawPipes(runTime);
+            drawPipeTops(runTime);
+
+            batcher.enableBlending();
+
             drawPacman(runTime);
             drawScore();
         } else if (myWorld.isReady()) {
-//            drawFood(runTime);
+            drawGodlikeShapes();
             drawPacman(runTime);
             drawReady();
             drawHelp();
@@ -372,22 +457,47 @@ public class GameRenderer {
             drawPacmanCentered(runTime);
             drawMenuUI();
         } else if (myWorld.isGameOver()) {
-//            drawFood(runTime);
+            batcher.disableBlending();
+
+            drawPipes(runTime);
+            drawPipeTops(runTime);
+
+            batcher.enableBlending();
+
             drawPacman(runTime);
             drawScoreboard();
             drawGameOver();
             drawRetry();
         } else if (myWorld.isHighScore()) {
-//            drawFood(runTime);
+            batcher.disableBlending();
+
+            drawPipes(runTime);
+            drawPipeTops(runTime);
+
+            batcher.enableBlending();
+
             drawPacman(runTime);
             drawScoreboard();
             drawHighScore();
             drawRetry();
+        } else if (myWorld.isPaused()) {
+            drawGodlikeShapes();
+
+            batcher.disableBlending();
+
+            drawPipes(runTime);
+            drawPipeTops(runTime);
+
+            batcher.enableBlending();
+
+            drawPacman(runTime);
+            drawHelp();
         }
 
-//        drawGrass();
-
         batcher.end();
+
+//        drawPipeHitbox();
+
         drawTransition(delta);
     }
 

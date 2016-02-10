@@ -1,5 +1,6 @@
 package io.github.skulltah.colorseek.GameObjects;
 
+import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -10,103 +11,46 @@ import io.github.skulltah.colorseek.CSHelpers.InGameEvaluator;
 import io.github.skulltah.colorseek.Constants.IDs;
 
 public class Pipe extends Scrollable {
-    public static final int VERTICAL_GAP = 44;
+    private static final int VERTICAL_GAP = 44;
+    private float verticalGap;
     private Random r;
     private Rectangle
-//            pipeTopUp, pipeTopDown, pipeMiddleTopUp, pipeMiddleTopDown,
-            pipeDownNonleathal,
-            pipeUp, pipeDown, pipeMiddle;
-    //    public static final int PIPE_TOP_WIDTH = Textures.PIPE_TOP_WIDTH;
-//    public static final int PIPE_TOP_HEIGHT = Textures.PIPE_TOP_HEIGHT;
+            pipeDownNonlethal;
+    private Rectangle pipeDownBelowNonlethal;
+    private Rectangle pipe;
+    private Rectangle pipeUp;
+    private Rectangle pipeDown;
+    private Rectangle pipeMiddle;
     private boolean isScored = false;
     private boolean isDoubleGaped = false;
     private InGameEvaluator inGameEvaluator;
     private CSGame game;
+    private ScrollHandler scrollHandler;
 
-    // When Pipe's constructor is invoked, invoke the super (Scrollable)
-    // constructor
-    public Pipe(CSGame game, float x, float y, int width, int height, float scrollSpeed) {
-        super(x, y, width, height, scrollSpeed);
+    public Pipe(CSGame game, float x, float y, int width, int height, ScrollHandler scrollHandler) {
+        super(x, y, width, height, scrollHandler.getScrollSpeed());
         this.game = game;
         this.inGameEvaluator = new InGameEvaluator(game);
-        // Initialize a Random object for Random number generation
+        this.scrollHandler = scrollHandler;
+
         r = new Random();
-//        pipeTopUp = new Rectangle();
-//        pipeTopDown = new Rectangle();
-//        pipeMiddleTopDown = new Rectangle();
-//        pipeMiddleTopUp = new Rectangle();
+
         pipeUp = new Rectangle();
         pipeDown = new Rectangle();
         pipeMiddle = new Rectangle();
-        pipeDownNonleathal = new Rectangle();
+        pipeDownNonlethal = new Rectangle();
+        pipeDownBelowNonlethal = new Rectangle();
+        pipe = new Rectangle();
+        this.verticalGap = VERTICAL_GAP;
     }
 
-    @Override
-    public void update(float delta) {
-        super.update(delta);
-
-        if (isDoubleGaped())
-            drawTwoGaps();
-        else
-            drawOneGap();
+    public float getVerticalGap() {
+        return verticalGap;
     }
 
-    private void drawOneGap() {
-        pipeUp.set(position.x, position.y, width, height - 2);
-        pipeDown.set(position.x,
-                position.y + height + VERTICAL_GAP,
-                width,
-                position.y + height + VERTICAL_GAP);
-        pipeDownNonleathal.set(position.x, position.y + height + VERTICAL_GAP, width, 500);
-
-//        pipeTopUp.set(position.x - (PIPE_TOP_WIDTH - width) / 2, position.y + height
-//                - PIPE_TOP_HEIGHT, PIPE_TOP_WIDTH, PIPE_TOP_HEIGHT);
-//        pipeTopDown.set(position.x - (PIPE_TOP_WIDTH - width) / 2, pipeDown.y,
-//                PIPE_TOP_WIDTH, PIPE_TOP_HEIGHT);
+    public Rectangle getPipeDownNonlethal() {
+        return pipeDownNonlethal;
     }
-
-    private void drawTwoGaps() {
-        int verticalGap = VERTICAL_GAP * 3;
-
-        pipeUp.set(position.x, position.y, width, height - 2);
-        pipeDown.set(position.x, position.y + height + verticalGap, width,
-                position.y + height * 2 + verticalGap);
-        pipeMiddle.set(position.x, position.y + height - 4 + VERTICAL_GAP, width, VERTICAL_GAP);
-
-//        pipeTopUp.set(position.x - (PIPE_TOP_WIDTH - width) / 2, position.y + height
-//                - PIPE_TOP_HEIGHT, PIPE_TOP_WIDTH, PIPE_TOP_HEIGHT);
-//        pipeTopDown.set(position.x - (PIPE_TOP_WIDTH - width) / 2, pipeDown.y,
-//                PIPE_TOP_WIDTH, PIPE_TOP_HEIGHT);
-//
-//        pipeMiddleTopUp.set(position.x - (PIPE_TOP_WIDTH - width) / 2, position.y + height + (VERTICAL_GAP * 2)
-//                - PIPE_TOP_HEIGHT, PIPE_TOP_WIDTH, PIPE_TOP_HEIGHT);
-//        pipeMiddleTopDown.set(position.x - (PIPE_TOP_WIDTH - width) / 2, pipeDown.y + VERTICAL_GAP,
-//                PIPE_TOP_WIDTH, PIPE_TOP_HEIGHT);
-    }
-
-    @Override
-    public void reset(float newX) {
-        // Call the reset method in the superclass (Scrollable)
-        super.reset(newX);
-        // Change the height to a random number
-        height = r.nextInt(90) + 30;
-        isScored = false;
-
-        isDoubleGaped = Math.random() < .35f;
-    }
-
-    public void onRestart(float x, float scrollSpeed) {
-        velocity.x = scrollSpeed;
-        reset(x);
-    }
-
-//    public Rectangle getPipeTopUp() {
-//        return pipeTopUp;
-//    }
-//
-//    public Rectangle getPipeTopDown() {
-//        return pipeTopDown;
-//    }
 
     public Rectangle getPipeUp() {
         return pipeUp;
@@ -116,26 +60,121 @@ public class Pipe extends Scrollable {
         return pipeDown;
     }
 
-    public boolean collides(Pacman pacman) {
-        if (position.x < pacman.getX() + pacman.getWidth()) {
-            if (Intersector.overlaps(pacman.getBoundingCircle(), pipeUp)
-                    || Intersector.overlaps(pacman.getBoundingCircle(), pipeDown)
-//                    || Intersector.overlaps(pacman.getBoundingCircle(), pipeTopUp)
-//                    || Intersector.overlaps(pacman.getBoundingCircle(), pipeTopDown)
-                    || (isDoubleGaped && (
-                    Intersector.overlaps(pacman.getBoundingCircle(), pipeMiddle)
-//                            || Intersector.overlaps(pacman.getBoundingCircle(), pipeMiddleTopUp)
-//                            || Intersector.overlaps(pacman.getBoundingCircle(), pipeMiddleTopDown)
-            ))) {
-                return true;
+    public Rectangle getPipeMiddle() {
+        return pipeMiddle;
+    }
+
+    public Rectangle getPipeDownBelowNonlethal() {
+        return pipeDownBelowNonlethal;
+    }
+
+    @Override
+    public void update(float delta) {
+        super.update(delta);
+
+        pipe.set(position.x, position.y, width, 1000);
+
+        if (isDoubleGaped())
+            drawTwoGaps();
+        else
+            drawOneGap();
+
+        if (isMoving()) {
+            if (game.powerupManager.isPowerupActive(Powerup.PowerupType.PipeGap)) {
+                if (verticalGap < VERTICAL_GAP * 1.2f)
+                    verticalGap += VERTICAL_GAP * .5f * delta;
             } else {
-                if (Intersector.overlaps(pacman.getBoundingCircle(), pipeDownNonleathal)) {
-                    inGameEvaluator.unlockGenericAchievement(IDs.achGlitch);
-                }
-                return false;
+                if (verticalGap > VERTICAL_GAP)
+                    verticalGap -= VERTICAL_GAP * .5f * delta;
             }
+
+            if (velocity.x != scrollHandler.getScrollSpeed())
+                velocity.x = scrollHandler.getScrollSpeed();
         }
-        return false;
+    }
+
+    private void drawOneGap() {
+        if (pipeMiddle != null)
+            pipeMiddle = null;
+        if (pipeDownNonlethal == null)
+            pipeDownNonlethal = new Rectangle();
+        if (pipeDownBelowNonlethal == null)
+            pipeDownBelowNonlethal = new Rectangle();
+        drawHitbox(pipeUp,
+                position.x, position.y,
+                width, height - 4);
+        drawHitbox(pipeDown,
+                position.x, position.y + height + 4 + verticalGap,
+                width, position.y + height + verticalGap / 2);
+        drawHitbox(pipeDownNonlethal,
+                position.x, position.y + height + verticalGap * 3,
+                width, verticalGap);
+        drawHitbox(pipeDownBelowNonlethal,
+                position.x, pipeDownNonlethal.y + verticalGap,
+                width, 500);
+    }
+
+    private void drawTwoGaps() {
+        if (pipeMiddle == null)
+            pipeMiddle = new Rectangle();
+        if (pipeDownNonlethal != null)
+            pipeDownNonlethal = null;
+        if (pipeDownBelowNonlethal != null)
+            pipeDownBelowNonlethal = null;
+
+        float middlePiece = verticalGap * 3;
+
+        drawHitbox(pipeUp,
+                position.x, position.y,
+                width, height - 4);
+        drawHitbox(pipeDown,
+                position.x, position.y + height + middlePiece,
+                width, position.y + height * 2 + middlePiece);
+        drawHitbox(pipeMiddle,
+                position.x, position.y + height + verticalGap,
+                width, verticalGap - 4);
+    }
+
+    private void drawHitbox(Rectangle pipe, float x, float y, float w, float h) {
+        if (pipe == null) return;
+        pipe.set(x, y, w, h);
+    }
+
+    @Override
+    public void reset(float newX) {
+        super.reset(newX);
+
+        height = r.nextInt(90) + 30;
+        isScored = false;
+
+        isDoubleGaped = Math.random() < .35f;
+    }
+
+    public void onRestart(float x) {
+        velocity.x = ScrollHandler.SCROLL_SPEED;
+        reset(x);
+    }
+
+    public boolean collides(Pacman pacman) {
+        Circle hitbox = pacman.getBoundingCircle();
+        if (Intersector.overlaps(hitbox, pipeUp)
+                || Intersector.overlaps(hitbox, pipeDown)
+                || (pipeDownBelowNonlethal != null && Intersector.overlaps(hitbox, pipeDownBelowNonlethal))
+                || (isDoubleGaped && pipeMiddle != null && Intersector.overlaps(hitbox, pipeMiddle))) {
+            return true;
+        } else {
+            if (pipeDownBelowNonlethal != null && Intersector.overlaps(hitbox, pipeDownNonlethal)) {
+                inGameEvaluator.unlockGenericAchievement(IDs.achGlitch);
+            }
+            return false;
+        }
+    }
+
+    public boolean collidesNonlethal(Pacman pacman) {
+        Circle hitbox = pacman.getBoundingCircle();
+        hitbox.setRadius(hitbox.radius * 1.2f);
+
+        return Intersector.overlaps(hitbox, pipe);
     }
 
     public boolean isScored() {
@@ -148,13 +187,5 @@ public class Pipe extends Scrollable {
 
     public boolean isDoubleGaped() {
         return isDoubleGaped;
-    }
-
-    public int getGapPosition() {
-        return height + (VERTICAL_GAP / 2) - 5;
-    }
-
-    public int getPositionX() {
-        return (int) pipeUp.getX();
     }
 }

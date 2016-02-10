@@ -5,7 +5,7 @@ import com.badlogic.gdx.InputAdapter;
 
 public class MyInputProcessor extends InputAdapter {
     float offsetx = 0;
-    float offsety = 150;
+    float offsety = 0;//150?
 
     @Override
     public boolean touchDown(

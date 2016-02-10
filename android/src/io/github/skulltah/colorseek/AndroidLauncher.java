@@ -125,7 +125,9 @@ public class AndroidLauncher extends AndroidApplication implements PlayServices 
 
     @Override
     public void unlockAchievement(String id) {
-        Games.Achievements.unlock(gameHelper.getApiClient(), id);
+        if (isSignedIn()) {
+            Games.Achievements.unlock(gameHelper.getApiClient(), id);
+        }
     }
 
     @Override

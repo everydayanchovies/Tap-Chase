@@ -35,6 +35,10 @@ public class Scrollable {
         velocity.x = 0;
     }
 
+    public boolean isMoving() {
+        return velocity.x != 0;
+    }
+
     public boolean isScrolledLeft() {
         return isScrolledLeft;
     }

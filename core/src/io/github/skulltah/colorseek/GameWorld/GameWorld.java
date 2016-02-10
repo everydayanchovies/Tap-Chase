@@ -4,9 +4,9 @@ import com.badlogic.gdx.utils.Timer;
 
 import io.github.skulltah.colorseek.CS.CSGame;
 import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
-import io.github.skulltah.colorseek.CSHelpers.InGameEvaluator;
-import io.github.skulltah.colorseek.CSHelpers.PastGameEvaluator;
+import io.github.skulltah.colorseek.CSHelpers.PostGameEvaluator;
 import io.github.skulltah.colorseek.Constants.Values;
+import io.github.skulltah.colorseek.GameObjects.GodlikeShape;
 import io.github.skulltah.colorseek.GameObjects.Pacman;
 import io.github.skulltah.colorseek.GameObjects.ScrollHandler;
 
@@ -19,18 +19,18 @@ public class GameWorld {
     private float runTime = 0;
     private int midPointY;
     private GameRenderer renderer;
-    private PastGameEvaluator pastGameEvaluator;
+    private PostGameEvaluator postGameEvaluator;
     private CSGame game;
 
     private GameState currentState;
 
     public GameWorld(CSGame game, int midPointY) {
         this.game = game;
-        currentState = GameState.MENU;
         this.midPointY = midPointY;
+        currentState = GameState.MENU;
         pacman = new Pacman(game, 33, midPointY - 8);
         scroller = new ScrollHandler(game, this, midPointY + Values.GAME_HEIGHT_FROM_MIDDLEPOINT);
-        pastGameEvaluator = new PastGameEvaluator(game);
+        postGameEvaluator = new PostGameEvaluator(game);
 //        ground = new Rectangle(0, midPointY + 66, 137, 11);
     }
 
@@ -45,6 +45,9 @@ public class GameWorld {
             case RUNNING:
                 updateRunning(delta);
                 break;
+            case PAUSED:
+                updatePaused(delta);
+                break;
             default:
                 break;
         }
@@ -53,6 +56,11 @@ public class GameWorld {
     private void updateReady(float delta) {
         pacman.updateReady(runTime);
         scroller.updateReady(delta);
+    }
+
+    private void updatePaused(float delta) {
+//        pacman.updatePaused(runTime);
+//        scroller.updatePaused(delta);
     }
 
     public void updateRunning(float delta) {
@@ -82,7 +90,7 @@ public class GameWorld {
 
                 renderer.prepareTransition(255, 0, 0, .3f);
 
-                pastGameEvaluator.score(AssetLoader.getHighScore(), score);
+                postGameEvaluator.score(AssetLoader.getHighScore(), score);
 
                 Timer.schedule(new Timer.Task() {
                     @Override
@@ -104,24 +112,6 @@ public class GameWorld {
                 }, .7f);
             }
         }
-
-//        if (Intersector.overlaps(pacman.getBoundingCircle(), ground)) {
-//            if (pacman.isAlive()) {
-//                AssetLoader.dead.play();
-//                renderer.prepareTransition(255, 255, 255, .3f);
-//
-//                pacman.die();
-//            }
-//
-//            scroller.stop();
-//            pacman.decelerate();
-//            currentState = GameState.GAMEOVER;
-//
-//            if (score > AssetLoader.getHighScore()) {
-//                AssetLoader.setHighScore(score);
-//                currentState = GameState.HIGHSCORE;
-//            }
-//        }
     }
 
     public Pacman getPacman() {
@@ -146,20 +136,47 @@ public class GameWorld {
 
     public void start() {
         currentState = GameState.RUNNING;
-        InGameEvaluator.isSignedIn = CSGame.playServices.isSignedIn();
+
+        for (GodlikeShape godlikeShape : scroller.getGodlikeShapes()) {
+            godlikeShape.setSpeed(godlikeShape.getSpeed() * .7f);
+        }
+    }
+
+    public void pause() {
+        currentState = GameState.PAUSED;
+    }
+
+    public void resume() {
+        currentState = GameState.RUNNING;
+    }
+
+    public void goToMainMenu() {
+        renderer.prepareTransition(0, 0, 0, 1f);
+        currentState = GameState.MENU;
+        score = 0;
+        pacman.onRestart(midPointY - 5);
+        scroller.onRestart();
+        game.powerupManager.disablePowerups();
+        renderer.generateBackground();
     }
 
     public void ready() {
-        currentState = GameState.READY;
         renderer.prepareTransition(0, 0, 0, 1f);
+        currentState = GameState.READY;
     }
 
     public void restart() {
         score = 0;
         pacman.onRestart(midPointY - 5);
         scroller.onRestart();
+        game.powerupManager.disablePowerups();
+        renderer.generateBackground();
+
+        for (GodlikeShape godlikeShape : scroller.getGodlikeShapes()) {
+            godlikeShape.setSpeed(godlikeShape.getSpeed() / .7f);
+        }
+
         ready();
-        InGameEvaluator.isSignedIn = CSGame.playServices.isSignedIn();
     }
 
     public boolean isReady() {
@@ -182,11 +199,15 @@ public class GameWorld {
         return currentState == GameState.RUNNING;
     }
 
+    public boolean isPaused() {
+        return currentState == GameState.PAUSED;
+    }
+
     public void setRenderer(GameRenderer renderer) {
         this.renderer = renderer;
     }
 
     public enum GameState {
-        MENU, READY, RUNNING, GAMEOVER, HIGHSCORE
+        MENU, READY, RUNNING, PAUSED, GAMEOVER, HIGHSCORE
     }
 }
