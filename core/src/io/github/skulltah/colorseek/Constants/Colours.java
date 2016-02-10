@@ -2,7 +2,7 @@ package io.github.skulltah.colorseek.Constants;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import io.github.skulltah.colorseek.ZBHelpers.Classes;
+import io.github.skulltah.colorseek.CSHelpers.Classes;
 
 public class Colours {
     public static final Classes.Colour BACKGROUND_COLOUR = new Classes.Colour(0, 0, 0);//55,80,100

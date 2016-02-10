@@ -3,25 +3,28 @@ package io.github.skulltah.colorseek.Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 
+import io.github.skulltah.colorseek.CS.CSGame;
+import io.github.skulltah.colorseek.CSHelpers.InputHandler;
 import io.github.skulltah.colorseek.Constants.Values;
-import io.github.skulltah.colorseek.ZBHelpers.InputHandler;
+import io.github.skulltah.colorseek.GameWorld.GameRenderer;
+import io.github.skulltah.colorseek.GameWorld.GameWorld;
 
 public class GameScreen implements Screen {
 
-    public static io.github.skulltah.colorseek.GameWorld.GameWorld world;
-    private io.github.skulltah.colorseek.GameWorld.GameRenderer renderer;
+    public static GameWorld world;
+    private GameRenderer renderer;
     private float runTime;
 
-    public GameScreen() {
+    public GameScreen(CSGame game) {
         float screenWidth = Gdx.graphics.getWidth();
         float screenHeight = Gdx.graphics.getHeight();
         float gameWidth = Values.GAME_WIDTH;
         float gameHeight = screenHeight / (screenWidth / gameWidth);
         int midPointY = (int) (gameHeight / 2);
 
-        world = new io.github.skulltah.colorseek.GameWorld.GameWorld(midPointY);
-        Gdx.input.setInputProcessor(new InputHandler(world, screenWidth / gameWidth, screenHeight / gameHeight));
-        renderer = new io.github.skulltah.colorseek.GameWorld.GameRenderer(world, (int) gameHeight, midPointY);
+        world = new GameWorld(game, midPointY);
+        Gdx.input.setInputProcessor(new InputHandler(world, screenWidth / gameWidth, screenHeight / gameHeight, game));
+        renderer = new GameRenderer(world, (int) gameHeight, midPointY);
         world.setRenderer(renderer);
     }
 

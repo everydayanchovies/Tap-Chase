@@ -1,32 +1,35 @@
 package io.github.skulltah.colorseek.Screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.Timer;
 
 import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenCallback;
 import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
-import io.github.skulltah.colorseek.Pacman.ZBGame;
+import io.github.skulltah.colorseek.CS.CSGame;
+import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
 
 public class SplashScreen implements Screen {
 
     private TweenManager manager;
     private SpriteBatch batcher;
     private Sprite sprite;
-    private ZBGame game;
+    private CSGame game;
 
-    public SplashScreen(ZBGame game) {
+    public SplashScreen(CSGame game) {
         this.game = game;
     }
 
     @Override
     public void show() {
-        sprite = new Sprite(io.github.skulltah.colorseek.ZBHelpers.AssetLoader.logo);
+        sprite = new Sprite(AssetLoader.logo);
         sprite.setColor(1, 1, 1, 0);
 
         float width = Gdx.graphics.getWidth();
@@ -37,24 +40,62 @@ public class SplashScreen implements Screen {
         sprite.setSize(sprite.getWidth() * scale, sprite.getHeight() * scale);
         sprite.setPosition((width / 2) - (sprite.getWidth() / 2), (height / 2)
                 - (sprite.getHeight() / 2));
-//		setupTween();
-        game.setScreen(new GameScreen());
+
+        setupTween();
+
         batcher = new SpriteBatch();
+
+        Preferences prefs = Gdx.app.getPreferences("generalPrefs");
+        boolean hasOfferedToSignIn = prefs.getBoolean("hasOfferedToSignIn", false);
+        boolean isSignedIn = prefs.getBoolean("isSignedIn", false);
+        if (!hasOfferedToSignIn || isSignedIn) {
+            CSGame.playServices.signIn();
+            if (!hasOfferedToSignIn) {
+                prefs.putBoolean("hasOfferedToSignIn", true);
+                prefs.flush();
+            }
+        }
+
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                setupTween2();
+            }
+        }, .8f);
     }
 
     private void setupTween() {
         Tween.registerAccessor(Sprite.class, new io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor());
         manager = new TweenManager();
 
+//        TweenCallback cb = new TweenCallback() {
+//            @Override
+//            public void onEvent(int type, BaseTween<?> source) {
+//                game.setScreen(new GameScreen());
+//            }
+//        };
+
+        Tween.to(sprite, io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor.ALPHA, .6f).target(1)
+                .ease(TweenEquations.easeInOutQuad)
+//                .repeatYoyo(1, 1)
+//                .setCallback(cb).setCallbackTriggers(TweenCallback.COMPLETE)
+                .start(manager);
+    }
+
+    private void setupTween2() {
+        Tween.registerAccessor(Sprite.class, new io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor());
+        manager = new TweenManager();
+
         TweenCallback cb = new TweenCallback() {
             @Override
             public void onEvent(int type, BaseTween<?> source) {
-                game.setScreen(new GameScreen());
+                game.setScreen(new GameScreen(game));
             }
         };
 
-        Tween.to(sprite, io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor.ALPHA, .2f).target(1)
-                .ease(TweenEquations.easeInOutQuad).repeatYoyo(1, .8f)
+        Tween.from(sprite, io.github.skulltah.colorseek.TweenAccessors.SpriteAccessor.ALPHA, .6f).target(1)
+                .ease(TweenEquations.easeInOutQuad)
+//                .repeatYoyo(1, 1)
                 .setCallback(cb).setCallbackTriggers(TweenCallback.COMPLETE)
                 .start(manager);
     }

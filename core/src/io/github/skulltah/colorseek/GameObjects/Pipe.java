@@ -5,21 +5,30 @@ import com.badlogic.gdx.math.Rectangle;
 
 import java.util.Random;
 
+import io.github.skulltah.colorseek.CS.CSGame;
+import io.github.skulltah.colorseek.CSHelpers.InGameEvaluator;
+import io.github.skulltah.colorseek.Constants.IDs;
+
 public class Pipe extends Scrollable {
     public static final int VERTICAL_GAP = 44;
     private Random r;
     private Rectangle
 //            pipeTopUp, pipeTopDown, pipeMiddleTopUp, pipeMiddleTopDown,
+            pipeDownNonleathal,
             pipeUp, pipeDown, pipeMiddle;
     //    public static final int PIPE_TOP_WIDTH = Textures.PIPE_TOP_WIDTH;
 //    public static final int PIPE_TOP_HEIGHT = Textures.PIPE_TOP_HEIGHT;
     private boolean isScored = false;
     private boolean isDoubleGaped = false;
+    private InGameEvaluator inGameEvaluator;
+    private CSGame game;
 
     // When Pipe's constructor is invoked, invoke the super (Scrollable)
     // constructor
-    public Pipe(float x, float y, int width, int height, float scrollSpeed) {
+    public Pipe(CSGame game, float x, float y, int width, int height, float scrollSpeed) {
         super(x, y, width, height, scrollSpeed);
+        this.game = game;
+        this.inGameEvaluator = new InGameEvaluator(game);
         // Initialize a Random object for Random number generation
         r = new Random();
 //        pipeTopUp = new Rectangle();
@@ -29,6 +38,7 @@ public class Pipe extends Scrollable {
         pipeUp = new Rectangle();
         pipeDown = new Rectangle();
         pipeMiddle = new Rectangle();
+        pipeDownNonleathal = new Rectangle();
     }
 
     @Override
@@ -43,8 +53,11 @@ public class Pipe extends Scrollable {
 
     private void drawOneGap() {
         pipeUp.set(position.x, position.y, width, height - 2);
-        pipeDown.set(position.x, position.y + height + VERTICAL_GAP, width,
+        pipeDown.set(position.x,
+                position.y + height + VERTICAL_GAP,
+                width,
                 position.y + height + VERTICAL_GAP);
+        pipeDownNonleathal.set(position.x, position.y + height + VERTICAL_GAP, width, 500);
 
 //        pipeTopUp.set(position.x - (PIPE_TOP_WIDTH - width) / 2, position.y + height
 //                - PIPE_TOP_HEIGHT, PIPE_TOP_WIDTH, PIPE_TOP_HEIGHT);
@@ -105,7 +118,7 @@ public class Pipe extends Scrollable {
 
     public boolean collides(Pacman pacman) {
         if (position.x < pacman.getX() + pacman.getWidth()) {
-            return (Intersector.overlaps(pacman.getBoundingCircle(), pipeUp)
+            if (Intersector.overlaps(pacman.getBoundingCircle(), pipeUp)
                     || Intersector.overlaps(pacman.getBoundingCircle(), pipeDown)
 //                    || Intersector.overlaps(pacman.getBoundingCircle(), pipeTopUp)
 //                    || Intersector.overlaps(pacman.getBoundingCircle(), pipeTopDown)
@@ -113,7 +126,14 @@ public class Pipe extends Scrollable {
                     Intersector.overlaps(pacman.getBoundingCircle(), pipeMiddle)
 //                            || Intersector.overlaps(pacman.getBoundingCircle(), pipeMiddleTopUp)
 //                            || Intersector.overlaps(pacman.getBoundingCircle(), pipeMiddleTopDown)
-            )));
+            ))) {
+                return true;
+            } else {
+                if (Intersector.overlaps(pacman.getBoundingCircle(), pipeDownNonleathal)) {
+                    inGameEvaluator.unlockGenericAchievement(IDs.achGlitch);
+                }
+                return false;
+            }
         }
         return false;
     }

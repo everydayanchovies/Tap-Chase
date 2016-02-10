@@ -16,13 +16,15 @@ import java.util.List;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
+import io.github.skulltah.colorseek.CS.CSGame;
+import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
+import io.github.skulltah.colorseek.CSHelpers.InputHandler;
 import io.github.skulltah.colorseek.Constants.Textures;
 import io.github.skulltah.colorseek.GameObjects.Food;
 import io.github.skulltah.colorseek.GameObjects.Pacman;
 import io.github.skulltah.colorseek.GameObjects.Pipe;
 import io.github.skulltah.colorseek.GameObjects.ScrollHandler;
 import io.github.skulltah.colorseek.TweenAccessors.ValueAccessor;
-import io.github.skulltah.colorseek.ZBHelpers.InputHandler;
 import io.github.skulltah.colorseek.ui.SimpleButton;
 
 public class GameRenderer {
@@ -44,9 +46,9 @@ public class GameRenderer {
 //    private Grass[] groundPool;
 
     // Game Assets
-    private TextureRegion bg, pacmanMid, ready,
+    private TextureRegion bg, pacmanMid, ready, help,
             zbLogo, gameOver, highScore, scoreboard, star, noStar;
-    private Animation pacmanAnimation, food1Animation, food2Animation, food3Animation, pipeAnimation, pipeTopUpAnimation, pipeTopDownAnimation, groundAnimation;
+    private Animation pacmanAnimation, pacmanAnimationSuper, food1Animation, food2Animation, food3Animation, food4Animation, pipeAnimation, pipeTopUpAnimation, pipeTopDownAnimation, groundAnimation;
 
     // Tween stuff
     private TweenManager manager;
@@ -96,22 +98,25 @@ public class GameRenderer {
     }
 
     private void initAssets() {
-        bg = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.bg;
-        pacmanAnimation = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.pacmanAnimation;
-        pacmanMid = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.pacmanHalfOpen;
-        ready = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.ready;
-        zbLogo = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.zbLogo;
-        gameOver = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.gameOver;
-        highScore = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.highScore;
-        scoreboard = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.scoreboard;
-        star = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.star;
-        noStar = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.noStar;
-        food1Animation = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.food1Animation;
-        food2Animation = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.food2Animation;
-        food3Animation = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.food3Animation;
-        pipeAnimation = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.pipeAnimation;
-        pipeTopDownAnimation = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.pipeTopDownAnimation;
-        pipeTopUpAnimation = io.github.skulltah.colorseek.ZBHelpers.AssetLoader.pipeTopUpAnimation;
+        bg = AssetLoader.bg;
+        pacmanAnimation = AssetLoader.pacmanAnimation;
+        pacmanAnimationSuper = AssetLoader.pacmanAnimationSuper;
+        pacmanMid = AssetLoader.pacmanHalfOpen;
+        ready = AssetLoader.ready;
+        help = AssetLoader.help;
+        zbLogo = AssetLoader.zbLogo;
+        gameOver = AssetLoader.gameOver;
+        highScore = AssetLoader.highScore;
+        scoreboard = AssetLoader.scoreboard;
+        star = AssetLoader.star;
+        noStar = AssetLoader.noStar;
+        food1Animation = AssetLoader.food1Animation;
+        food2Animation = AssetLoader.food2Animation;
+        food3Animation = AssetLoader.food3Animation;
+        food4Animation = AssetLoader.food4Animation;
+        pipeAnimation = AssetLoader.pipeAnimation;
+        pipeTopDownAnimation = AssetLoader.pipeTopDownAnimation;
+        pipeTopUpAnimation = AssetLoader.pipeTopUpAnimation;
 //        groundAnimation = AssetLoader.groundAnimation;
     }
 
@@ -185,35 +190,60 @@ public class GameRenderer {
                                 foodItem.getY(), foodItem.getWidth() / 2.0f,
                                 foodItem.getHeight() / 2.0f, foodItem.getWidth(), foodItem.getHeight(), 1, 1, 0);
                         break;
+                    case Super:
+                        batcher.draw(food4Animation.getKeyFrame(runTime), foodItem.getX(),
+                                foodItem.getY(), foodItem.getWidth() / 2.0f,
+                                foodItem.getHeight() / 2.0f, foodItem.getWidth(), foodItem.getHeight(), 1, 1, 0);
+                        break;
                 }
             }
         }
     }
 
     private void drawPacmanCentered(float runTime) {
-        batcher.draw(pacmanAnimation.getKeyFrame(runTime), 59, pacman.getY() - 15,
-                pacman.getWidth() / 2.0f, pacman.getHeight() / 2.0f,
-                pacman.getWidth(), pacman.getHeight(), pacman.getScale(), pacman.getScale(), pacman.getRotation());
+        if (pacman.getIsSuper())
+            batcher.draw(pacmanAnimationSuper.getKeyFrame(runTime), 59, pacman.getY() - 15,
+                    pacman.getWidth() / 2.0f, pacman.getHeight() / 2.0f,
+                    pacman.getWidth(), pacman.getHeight(), pacman.getScale(), pacman.getScale(), pacman.getRotation());
+        else
+            batcher.draw(pacmanAnimation.getKeyFrame(runTime), 59, pacman.getY() - 15,
+                    pacman.getWidth() / 2.0f, pacman.getHeight() / 2.0f,
+                    pacman.getWidth(), pacman.getHeight(), pacman.getScale(), pacman.getScale(), pacman.getRotation());
     }
 
     private void drawPacman(float runTime) {
-        if (pacman.shouldntFlap()) {
-            batcher.draw(pacmanMid, pacman.getX(), pacman.getY(),
-                    pacman.getWidth() / 2.0f, pacman.getHeight() / 2.0f,
-                    pacman.getWidth(), pacman.getHeight(), pacman.getScale(), pacman.getScale(), pacman.getRotation());
+        if (pacman.getIsSuper()) {
+            if (pacman.shouldntFlap()) {
+                batcher.draw(pacmanMid, pacman.getX(), pacman.getY(),
+                        pacman.getWidth() / 2.0f, pacman.getHeight() / 2.0f,
+                        pacman.getWidth(), pacman.getHeight(), pacman.getScale(), pacman.getScale(), pacman.getRotation());
+            } else {
+                batcher.draw(pacmanAnimationSuper.getKeyFrame(runTime), pacman.getX(),
+                        pacman.getY(), pacman.getWidth() / 2.0f,
+                        pacman.getHeight() / 2.0f, pacman.getWidth(), pacman.getHeight(),
+                        pacman.getScale(), pacman.getScale(), pacman.getRotation());
+            }
         } else {
-            batcher.draw(pacmanAnimation.getKeyFrame(runTime), pacman.getX(),
-                    pacman.getY(), pacman.getWidth() / 2.0f,
-                    pacman.getHeight() / 2.0f, pacman.getWidth(), pacman.getHeight(),
-                    pacman.getScale(), pacman.getScale(), pacman.getRotation());
+            if (pacman.shouldntFlap()) {
+                batcher.draw(pacmanMid, pacman.getX(), pacman.getY(),
+                        pacman.getWidth() / 2.0f, pacman.getHeight() / 2.0f,
+                        pacman.getWidth(), pacman.getHeight(), pacman.getScale(), pacman.getScale(), pacman.getRotation());
+            } else {
+                batcher.draw(pacmanAnimation.getKeyFrame(runTime), pacman.getX(),
+                        pacman.getY(), pacman.getWidth() / 2.0f,
+                        pacman.getHeight() / 2.0f, pacman.getWidth(), pacman.getHeight(),
+                        pacman.getScale(), pacman.getScale(), pacman.getRotation());
+            }
         }
     }
 
     private void drawMenuUI() {
-        batcher.draw(zbLogo, 122 / 2 - 45, midPointY - 50,
+        batcher.draw(zbLogo, 122 / 2 - 45, midPointY - 70,
                 zbLogo.getRegionWidth() / 1.2f, zbLogo.getRegionHeight() / 1.2f);
 
         menuButtons.get(0).draw(batcher);
+        menuButtons.get(2).draw(batcher, CSGame.playServices.isSignedIn());
+        menuButtons.get(3).draw(batcher, CSGame.playServices.isSignedIn());
 //        for (SimpleButton button : menuButtons) {
 //            button.draw(batcher);
 //        }
@@ -250,22 +280,27 @@ public class GameRenderer {
 
         int length = ("" + myWorld.getScore()).length();
 
-        io.github.skulltah.colorseek.ZBHelpers.AssetLoader.whiteFont.draw(batcher, "" + myWorld.getScore(),
+        AssetLoader.whiteFont.draw(batcher, "" + myWorld.getScore(),
                 104 - (2 * length), midPointY - 20);
 
-        int length2 = ("" + io.github.skulltah.colorseek.ZBHelpers.AssetLoader.getHighScore()).length();
-        io.github.skulltah.colorseek.ZBHelpers.AssetLoader.whiteFont.draw(batcher, "" + io.github.skulltah.colorseek.ZBHelpers.AssetLoader.getHighScore(),
+        int length2 = ("" + AssetLoader.getHighScore()).length();
+        AssetLoader.whiteFont.draw(batcher, "" + AssetLoader.getHighScore(),
                 104 - (2.5f * length2), midPointY - 3);
 
     }
 
     private void drawRetry() {
-//        batcher.draw(retry, 36, midPointY + 10, 66, 14);
         menuButtons.get(1).draw(batcher);
+        menuButtons.get(2).draw(batcher, CSGame.playServices.isSignedIn());
+        menuButtons.get(3).draw(batcher, CSGame.playServices.isSignedIn());
     }
 
     private void drawReady() {
         batcher.draw(ready, 36, midPointY - 50, 68, 14);
+    }
+
+    private void drawHelp() {
+        batcher.draw(help, 36, midPointY, 67, 200);
     }
 
     private void drawGameOver() {
@@ -274,9 +309,9 @@ public class GameRenderer {
 
     private void drawScore() {
         int length = ("" + myWorld.getScore()).length();
-        io.github.skulltah.colorseek.ZBHelpers.AssetLoader.shadow.draw(batcher, "" + myWorld.getScore(),
+        AssetLoader.shadow.draw(batcher, "" + myWorld.getScore(),
                 68 - (3 * length), midPointY - 82);
-        io.github.skulltah.colorseek.ZBHelpers.AssetLoader.font.draw(batcher, "" + myWorld.getScore(),
+        AssetLoader.font.draw(batcher, "" + myWorld.getScore(),
                 68 - (3 * length), midPointY - 83);
     }
 
@@ -285,7 +320,7 @@ public class GameRenderer {
     }
 
     public void render(float delta, float runTime) {
-        Gdx.gl.glClearColor(10 / 255f, 10 / 255f, 10 / 255f, 1);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         shapeRenderer.begin(ShapeType.Filled);
@@ -313,12 +348,16 @@ public class GameRenderer {
 //        drawGround(runTime);
 
         batcher.enableBlending();
+
         if (myWorld.isRunning() || myWorld.isReady() || myWorld.isGameOver() || myWorld.isHighScore())
             drawFood(runTime);
 
-        drawPipes(runTime);
+        batcher.disableBlending();
 
+        drawPipes(runTime);
         drawPipeTops(runTime);
+
+        batcher.enableBlending();
 
         if (myWorld.isRunning()) {
 //            drawFood(runTime);
@@ -328,6 +367,7 @@ public class GameRenderer {
 //            drawFood(runTime);
             drawPacman(runTime);
             drawReady();
+            drawHelp();
         } else if (myWorld.isMenu()) {
             drawPacmanCentered(runTime);
             drawMenuUI();

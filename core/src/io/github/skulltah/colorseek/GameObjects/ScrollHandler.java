@@ -5,6 +5,9 @@ import com.badlogic.gdx.math.Vector2;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.github.skulltah.colorseek.CS.CSGame;
+import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
+import io.github.skulltah.colorseek.CSHelpers.InGameEvaluator;
 import io.github.skulltah.colorseek.Constants.Textures;
 import io.github.skulltah.colorseek.Constants.Values;
 import io.github.skulltah.colorseek.GameWorld.GameWorld;
@@ -12,37 +15,41 @@ import io.github.skulltah.colorseek.GameWorld.GameWorld;
 public class ScrollHandler {
     //    private Grass[] groundPool;
     public static final int SCROLL_SPEED = -59;
-    public static final int PIPE_GAP = 73;
+    public static final int PIPE_GAP = 76;
     public static final int PIPE_GAP_OFFSET = 20;
     public static final int FOOD_AMOUNT_X = 10;
     public static final int FOOD_GAP_X = 15;
     public static final int FOOD_GAP_Y = 25;
-    private io.github.skulltah.colorseek.GameObjects.Pipe pipe1, pipe2, pipe3;
-    private io.github.skulltah.colorseek.GameObjects.Food[] foodPool;
-    private List<io.github.skulltah.colorseek.GameObjects.Pipe> pipes;
+    private Pipe pipe1, pipe2, pipe3;
+    private Food[] foodPool;
+    private List<Pipe> pipes;
+    private InGameEvaluator inGameEvaluator;
+    private CSGame game;
 
     private GameWorld gameWorld;
 
-    public ScrollHandler(GameWorld gameWorld, float yPos) {
+    public ScrollHandler(CSGame game, GameWorld gameWorld, float yPos) {
+        this.game = game;
+        this.inGameEvaluator = new InGameEvaluator(game);
         this.gameWorld = gameWorld;
-        pipe1 = new io.github.skulltah.colorseek.GameObjects.Pipe(210, 0, Textures.PIPE_WIDTH, 60, SCROLL_SPEED);
-        pipe2 = new io.github.skulltah.colorseek.GameObjects.Pipe(pipe1.getTailX() + PIPE_GAP, 0, Textures.PIPE_WIDTH, 70, SCROLL_SPEED);
-        pipe3 = new io.github.skulltah.colorseek.GameObjects.Pipe(pipe2.getTailX() + PIPE_GAP, 0, Textures.PIPE_WIDTH, 60, SCROLL_SPEED);
+        pipe1 = new Pipe(game, 210, 0, Textures.PIPE_WIDTH, 60, SCROLL_SPEED);
+        pipe2 = new Pipe(game, pipe1.getTailX() + PIPE_GAP, 0, Textures.PIPE_WIDTH, 70, SCROLL_SPEED);
+        pipe3 = new Pipe(game, pipe2.getTailX() + PIPE_GAP, 0, Textures.PIPE_WIDTH, 60, SCROLL_SPEED);
 
-        pipes = new ArrayList<io.github.skulltah.colorseek.GameObjects.Pipe>() {{
+        pipes = new ArrayList<Pipe>() {{
             add(pipe1);
             add(pipe2);
             add(pipe3);
         }};
 
-        foodPool = new io.github.skulltah.colorseek.GameObjects.Food[Values.FOOD_POOL_SIZE];
+        foodPool = new Food[Values.FOOD_POOL_SIZE];
 //        groundPool = new Grass[5];
 
         int gameWidth = (int) (Values.GAME_WIDTH * 1.5f);
         for (int i = 0; i < foodPool.length; i++) {
             int x = ((i / FOOD_AMOUNT_X) * FOOD_GAP_X) + gameWidth / 2;
             int y = (i - ((i / FOOD_AMOUNT_X) * FOOD_AMOUNT_X)) * FOOD_GAP_Y;
-            foodPool[i] = new io.github.skulltah.colorseek.GameObjects.Food(x, y, SCROLL_SPEED * .82f, this);
+            foodPool[i] = new Food(x, y, SCROLL_SPEED * .82f, this);
         }
 
 //        groundPool[0] = new Grass(0, yPos, 48, 5, SCROLL_SPEED);
@@ -64,18 +71,6 @@ public class ScrollHandler {
             if (!foodPool[i].isEnabled) continue;
 
             if (foodPool[i].collides(gameWorld.getPacman())) {
-                switch (foodPool[i].foodType()) {
-                    default:
-                        break;
-                    case Fat:
-                        gameWorld.getPacman().eat(1);
-                        break;
-                    case Healthy:
-                        gameWorld.getPacman().eat(-2);
-                        break;
-                    case Poison:
-                        break;
-                }
                 foodPool[i].isEnabled = false;
             }
         }
@@ -119,16 +114,21 @@ public class ScrollHandler {
                         break;
                     case Healthy:
                         gameWorld.getPacman().eat(-2);
-                        io.github.skulltah.colorseek.ZBHelpers.AssetLoader.healthy.play();
+                        AssetLoader.healthy.play();
                         addScore(1);
                         break;
                     case Poison:
                         addScore(3);
                         gameWorld.getPacman().eat(2);
-                        io.github.skulltah.colorseek.ZBHelpers.AssetLoader.poison.play();
+                        AssetLoader.poison.play();
+                        break;
+                    case Super:
+                        gameWorld.getPacman().makeSuper();
+                        AssetLoader.poison.play();
                         break;
                 }
                 foodPool[i].isEnabled = false;
+                inGameEvaluator.score(gameWorld.getScore());
             }
         }
 
@@ -170,19 +170,19 @@ public class ScrollHandler {
                 + pacman.getWidth()) {
             addScore(1);
             pipe1.setScored(true);
-            io.github.skulltah.colorseek.ZBHelpers.AssetLoader.scoreUp.play();
+            AssetLoader.scoreUp.play();
         } else if (!pipe2.isScored()
                 && pipe2.getX() + (pipe2.getWidth() / 2) < pacman.getX()
                 + pacman.getWidth()) {
             addScore(1);
             pipe2.setScored(true);
-            io.github.skulltah.colorseek.ZBHelpers.AssetLoader.scoreUp.play();
+            AssetLoader.scoreUp.play();
         } else if (!pipe3.isScored()
                 && pipe3.getX() + (pipe3.getWidth() / 2) < pacman.getX()
                 + pacman.getWidth()) {
             addScore(1);
             pipe3.setScored(true);
-            io.github.skulltah.colorseek.ZBHelpers.AssetLoader.scoreUp.play();
+            AssetLoader.scoreUp.play();
         }
 
         return (pipe1.collides(pacman) || pipe2.collides(pacman) || pipe3

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/home/max/libgdxtest/android/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ic_launcher.png",
-        "source": "/home/max/libgdxtest/android/res/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ic_launcher.png",
         "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/res/mipmap-xxhdpi/ic_launcher.png"
     }

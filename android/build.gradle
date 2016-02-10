@@ -16,11 +16,13 @@ android {
     }
     defaultConfig {
         applicationId 'io.github.skulltah.colorseek'
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 23
+        multiDexEnabled true
     }
     dependencies {
         compile fileTree(dir: '../libs', include: '*.jar')
+        compile 'com.android.support:multidex:1.0.1'
     }
     productFlavors {
     }
@@ -121,6 +123,4 @@ idea {
     }
 }
 dependencies {
-    compile files('libs/tween-engine-api.jar')
-    compile files('libs/tween-engine-api-sources.jar')
 }

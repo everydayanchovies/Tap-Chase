@@ -4,6 +4,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 
+import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
+
 public class SimpleButton {
 
     private float x, y, width, height;
@@ -27,11 +29,35 @@ public class SimpleButton {
         bounds = new Rectangle(x, y, width, height);
     }
 
+    public SimpleButton(float x, float y, float width, float height, float scale,
+                        TextureRegion buttonUp, TextureRegion buttonDown) {
+        this.x = x;
+        this.y = y;
+        this.width = width * scale;
+        this.height = height * scale;
+        this.buttonUp = buttonUp;
+        this.buttonDown = buttonDown;
+
+        bounds = new Rectangle(x, y, width, height);
+    }
+
     public boolean isClicked(int screenX, int screenY) {
         return bounds.contains(screenX, screenY);
     }
 
     public void draw(SpriteBatch batcher) {
+        if (isPressed) {
+            batcher.draw(buttonDown, x, y, width, height);
+        } else {
+            batcher.draw(buttonUp, x, y, width, height);
+        }
+    }
+
+    public void draw(SpriteBatch batcher, boolean enabled) {
+        if (!enabled) {
+            batcher.draw(buttonDown, x, y, width, height);
+            return;
+        }
         if (isPressed) {
             batcher.draw(buttonDown, x, y, width, height);
         } else {
@@ -52,7 +78,7 @@ public class SimpleButton {
         // It only counts as a touchUp if the button is in a pressed state.
         if (bounds.contains(screenX, screenY) && isPressed) {
             isPressed = false;
-            io.github.skulltah.colorseek.ZBHelpers.AssetLoader.tap.play();
+            AssetLoader.tap.play();
             return true;
         }
 

@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/core/build/libs/core-1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="025b16d2f2e4cf2eb6528dc5dd061a52259de6c7">
+        <dex dex="/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/pre-dexed/release/core-1.0_fc25008999297f2018e9b1069131120e78c6073e.jar" />
+    </item>
+
+</items>

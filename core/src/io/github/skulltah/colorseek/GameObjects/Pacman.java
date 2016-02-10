@@ -4,6 +4,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
+import io.github.skulltah.colorseek.CS.CSGame;
+import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
+import io.github.skulltah.colorseek.CSHelpers.InGameEvaluator;
+import io.github.skulltah.colorseek.Constants.IDs;
 import io.github.skulltah.colorseek.Constants.Values;
 
 public class Pacman {
@@ -24,8 +28,12 @@ public class Pacman {
     private boolean isAlive;
     private Circle boundingCircle;
     private float gameHeight;
+    private boolean isSuper;
+    private long timeOfSuper;
+    private InGameEvaluator inGameEvaluator;
+    private CSGame game;
 
-    public Pacman(float x, float y) {
+    public Pacman(CSGame game, float x, float y) {
         this.width = io.github.skulltah.colorseek.Constants.Textures.PACMAN_SIZE;
         this.height = io.github.skulltah.colorseek.Constants.Textures.PACMAN_SIZE;
         this.originalY = y;
@@ -38,6 +46,10 @@ public class Pacman {
         isAlive = true;
         direction = 0;
         verticalSpeed = 95;
+        this.isSuper = false;
+        this.timeOfSuper = 0;
+        this.game = game;
+        this.inGameEvaluator = new InGameEvaluator(game);
 
         float screenWidth = Gdx.graphics.getWidth();
         float screenHeight = Gdx.graphics.getHeight();
@@ -102,7 +114,13 @@ public class Pacman {
             rotation *= -1;
         }
 
-        boundingCircle.set(position.x + 9, position.y + 6, 6.5f * scale);
+        boundingCircle.set(position.x + 7, position.y + 7, 5.5f * scale);
+
+        if (isSuper) {
+            long timeElapsedSinceSuper = System.currentTimeMillis() - timeOfSuper;
+            if (timeElapsedSinceSuper > 6000)
+                isSuper = false;
+        }
     }
 
 //    public boolean isFalling() {
@@ -123,10 +141,11 @@ public class Pacman {
             long timeElapsedSinceLastTap = System.currentTimeMillis() - millisTapped;
             millisTapped = System.currentTimeMillis();
 
-            if (timeElapsedSinceLastTap < 150)
-                io.github.skulltah.colorseek.ZBHelpers.AssetLoader.doubleTap.play();
-            else
-                io.github.skulltah.colorseek.ZBHelpers.AssetLoader.tap.play();
+            if (timeElapsedSinceLastTap < 150) {
+                AssetLoader.doubleTap.play();
+                inGameEvaluator.unlockGenericAchievement(IDs.achSkillz);
+            } else
+                AssetLoader.tap.play();
 
 //            velocity.y = -140;
 //            if (scale > 1f)
@@ -137,22 +156,28 @@ public class Pacman {
     }
 
     public void die() {
+        if (isSuper) {
+            return;
+        }
+
         isAlive = false;
         velocity.y = 0;
         direction = 0;
     }
 
-    public void eat(float amount) {
-        float newScale = scale + (amount / 7);
+    // Returns true if eating went according to plan
+    public boolean eat(float amount) {
+        float newScale = scale + (isSuper ? (amount / 14) : (amount / 7));
         if (newScale < 1) {
             scale = 1;
-            return;
+            return false;
         }
         if (newScale > MAX_SCALE) {
             scale = MAX_SCALE;
-            return;
+            return false;
         }
         scale = newScale;
+        return true;
     }
 
 //    public void decelerate() {
@@ -201,5 +226,16 @@ public class Pacman {
 
     public float getScale() {
         return scale;
+    }
+
+    public void makeSuper() {
+        if (isSuper) return;
+        this.isSuper = true;
+        eat(8);
+        this.timeOfSuper = System.currentTimeMillis();
+    }
+
+    public boolean getIsSuper() {
+        return isSuper;
     }
 }

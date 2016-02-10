@@ -9,7 +9,6 @@ public class Food extends Scrollable {
     private Rectangle food;
     private ScrollHandler scrollHandler;
     private double chance; // Decides whether this food item is enabled or not
-    private double chance2; // Determines what kind of food this is
     private FoodType foodType;
 
     public Food(float x, float y, float scrollSpeed, ScrollHandler scrollHandler) {
@@ -24,7 +23,9 @@ public class Food extends Scrollable {
         isEnabled = Math.random() < chance;
 
         double random = Math.random();
-        if (random < .07f)
+        if (random < .015f)
+            foodType = FoodType.Super;
+        else if (random < .07f)
             foodType = FoodType.Poison;
         else if (random < .7f)
             foodType = FoodType.Fat;
@@ -71,7 +72,11 @@ public class Food extends Scrollable {
         return foodType;
     }
 
+    public void setChance(double chance) {
+        this.chance = chance;
+    }
+
     public enum FoodType {
-        Fat, Healthy, Poison
+        Fat, Healthy, Poison, Super
     }
 }
