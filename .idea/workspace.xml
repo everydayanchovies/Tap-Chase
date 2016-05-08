@@ -6,12 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52c7b34b-d252-4c25-9197-96c8be940fbd" name="Default" comment="Added leaderboard and achievements.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/powerUp6.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/radar2.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/radar3.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/texture.xcf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/texture_black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/uiskin.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/intermediates/assets/debug/powerUp6.ogg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/intermediates/assets/debug/radar2.ogg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/intermediates/assets/debug/radar3.ogg" />
@@ -986,18 +980,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Screens/MainLeaderboardScreen$5.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Screens/MainLeaderboardScreen$6.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Screens/MainLeaderboardScreen.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/src/main/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/src/main/java/com/google/example/games/basegameutils/BaseGameActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/src/main/java/com/google/example/games/basegameutils/BaseGameUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/src/main/java/com/google/example/games/basegameutils/GameHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/src/main/java/com/google/example/games/basegameutils/GameHelperUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/src/main/res/values/gamehelper_strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BaseGameUtils/src/main/res/values/strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/default.fnt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/uiskin.atlas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/assets/uiskin.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/generated/source/r/debug/com/google/android/gms/R.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/generated/source/r/debug/com/google/android/gms/base/R.java" />
@@ -1591,11 +1573,8 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/values-zh-rTW/values-zh-rTW.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/values-zu/values-zu.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build/intermediates/symbols/debug/R.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PostGameEvaluator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PowerupManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/Utils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/GodlikeShape.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Powerup.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/android/build/generated/source/buildConfig/release/io/github/skulltah/colorseek/BuildConfig.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/android/build/generated/source/r/release/io/github/skulltah/colorseek/R.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/android/build/intermediates/assets/release/coin.wav" afterPath="" />
@@ -1696,8 +1675,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/android-release.apk" afterPath="$PROJECT_DIR$/android/android-release.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/assets/texture.png" afterPath="$PROJECT_DIR$/android/assets/texture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/assets/debug/texture.png" afterPath="$PROJECT_DIR$/android/build/intermediates/assets/debug/texture.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher.png" afterPath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png" afterPath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png" />
@@ -1706,12 +1683,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png" afterPath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/android/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/android/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/ic_launcher-web.png" afterPath="$PROJECT_DIR$/android/ic_launcher-web.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/android/res/mipmap-hdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/android/res/mipmap-mdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/android/res/mipmap-xhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/android/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/android/res/mipmap-xxxhdpi/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Constants/Values.class" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Constants/Values.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/GameObjects/Food$FoodType.class" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/GameObjects/Food$FoodType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/GameObjects/Food.class" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/GameObjects/Food.class" />
@@ -1733,11 +1704,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Screens/GameScreen.class" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Screens/GameScreen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Screens/SplashScreen.class" afterPath="$PROJECT_DIR$/core/build/classes/main/io/github/skulltah/colorseek/Screens/SplashScreen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/max.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/max.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseGameUtils/BaseGameUtils.iml" afterPath="$PROJECT_DIR$/BaseGameUtils/BaseGameUtils.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/android/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/android.iml" afterPath="$PROJECT_DIR$/android/android.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/generated/source/buildConfig/debug/io/github/skulltah/colorseek/BuildConfig.java" afterPath="$PROJECT_DIR$/android/build/generated/source/buildConfig/debug/io/github/skulltah/colorseek/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi/values.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" />
@@ -1747,24 +1715,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/res/values/strings.xml" afterPath="$PROJECT_DIR$/android/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/io/github/skulltah/colorseek/AndroidLauncher.java" afterPath="$PROJECT_DIR$/android/src/io/github/skulltah/colorseek/AndroidLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CS/CSGame.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CS/CSGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InGameEvaluator.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InGameEvaluator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Constants/Values.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Constants/Values.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Food.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Food.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Pacman.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Pacman.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Pipe.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Pipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/ScrollHandler.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/ScrollHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Scrollable.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Scrollable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameRenderer.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameWorld.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/MyInputProcessor.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/MyInputProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/GameScreen.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/GameScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/SplashScreen.java" afterPath="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/SplashScreen.java" />
     </list>
     <ignored path="ColorSeek.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1785,51 +1735,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Powerup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Powerup.java">
+      <file leaf-file-name="GameScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameRenderer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameRenderer.java">
+      <file leaf-file-name="InputHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="492" column="0" selection-start-line="492" selection-start-column="0" selection-end-line="492" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GodlikeShape.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/GodlikeShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5764706">
-              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+              <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
               <folding>
-                <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#486#487#0" expanded="true" />
-                <element signature="e#520#521#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#1247#1248#0" expanded="true" />
-                <element signature="e#1293#1294#0" expanded="true" />
-                <element signature="e#1324#1325#0" expanded="true" />
-                <element signature="e#1357#1358#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Food.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Food.java">
+      <file leaf-file-name="PlayServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PlayServices.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidLauncher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/io/github/skulltah/colorseek/AndroidLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostGameEvaluator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PostGameEvaluator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding>
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssetLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="323" column="1" selection-start-line="323" selection-start-column="1" selection-end-line="323" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#14945#14946#0" expanded="true" />
+                <element signature="e#14997#14998#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GodlikeShape.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/GodlikeShape.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+              <folding>
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="e#1233#1234#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1310#1311#0" expanded="true" />
+                <element signature="e#1356#1357#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1844,22 +1833,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSGame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CS/CSGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameWorld.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameWorld.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="170" column="29" selection-start-line="170" selection-start-column="29" selection-end-line="170" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.51428574">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
+                <element signature="e#2944#3643#0" expanded="true" />
+                <element signature="e#3328#3570#0" expanded="true" />
+                <element signature="e#3569#3570#0" expanded="true" />
+                <element signature="e#3642#3643#0" expanded="true" />
+                <element signature="e#3712#3713#0" expanded="true" />
+                <element signature="e#3741#3742#0" expanded="true" />
+                <element signature="e#3774#3775#0" expanded="true" />
+                <element signature="e#3806#3807#0" expanded="true" />
+                <element signature="e#3848#3849#0" expanded="true" />
+                <element signature="e#3879#3880#0" expanded="true" />
+                <element signature="e#3908#3909#0" expanded="true" />
+                <element signature="e#3936#3937#0" expanded="true" />
+                <element signature="e#3979#3980#0" expanded="true" />
+                <element signature="e#4013#4014#0" expanded="true" />
                 <element signature="e#4264#4265#0" expanded="true" />
                 <element signature="e#4311#4312#0" expanded="true" />
                 <element signature="e#4339#4340#0" expanded="true" />
@@ -1873,21 +1866,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssetLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ScrollHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/ScrollHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -1915,6 +1898,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -4484,7 +4472,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="7290142456667" />
+        <entry key="$PROJECT_DIR$" value="7290276715017" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -5024,13 +5012,13 @@
         <option value="$PROJECT_DIR$/android/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/MyInputProcessor.java" />
         <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Pacman.java" />
-        <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/GameScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java" />
         <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameRenderer.java" />
         <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameWorld.java" />
-        <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java" />
         <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/ScrollHandler.java" />
         <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/GodlikeShape.java" />
+        <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/GameScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java" />
       </list>
     </option>
   </component>
@@ -5076,6 +5064,46 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ColorSeek" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colorseek" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ColorSeek" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colorseek" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSHelpers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -5399,7 +5427,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455124123761</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added bits of story, fixed loaderboard.">
+      <created>1462715447155</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1462715447155</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -5412,20 +5446,20 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24654505" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24654505" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -5453,7 +5487,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added leaderboard and achievements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added leaderboard and achievements." />
+    <MESSAGE value="Added bits of story, fixed loaderboard." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added bits of story, fixed loaderboard." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -5665,31 +5700,15 @@
           <caret line="91" column="62" selection-start-line="91" selection-start-column="62" selection-end-line="91" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#515#516#0" expanded="false" />
-            <element signature="e#5674#5675#0" expanded="false" />
-            <element signature="e#5705#5706#0" expanded="false" />
-            <element signature="e#5745#5746#0" expanded="false" />
-            <element signature="e#5773#5774#0" expanded="false" />
-            <element signature="e#5811#5812#0" expanded="false" />
-            <element signature="e#5847#5848#0" expanded="false" />
+            <element signature="e#1557#1558#0" expanded="false" />
+            <element signature="e#1591#1592#0" expanded="false" />
+            <element signature="e#5670#5671#0" expanded="false" />
+            <element signature="e#5701#5702#0" expanded="false" />
+            <element signature="e#5741#5742#0" expanded="false" />
+            <element signature="e#5769#5770#0" expanded="false" />
+            <element signature="e#5807#5808#0" expanded="false" />
+            <element signature="e#5843#5844#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar!/com/google/android/gms/games/leaderboard/Leaderboards.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35044247">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar!/com/google/android/gms/games/Games.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35044247">
-          <caret line="88" column="37" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5701,36 +5720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/core/build/libs/core-1.0.jar!/io/github/skulltah/colorseek/ui/SimpleButton.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.166667">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/ui/SimpleButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60285133">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PostGameEvaluator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <element signature="e#361#362#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PlayServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -5772,22 +5765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/io/github/skulltah/colorseek/AndroidLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/MyGdxGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -5804,29 +5781,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="167" column="36" selection-start-line="167" selection-start-column="36" selection-end-line="167" selection-end-column="36" />
-          <folding>
-            <element signature="e#6827#6828#0" expanded="false" />
-            <element signature="e#6855#6856#0" expanded="false" />
-            <element signature="e#6916#6917#0" expanded="false" />
-            <element signature="e#6944#6945#0" expanded="false" />
-            <element signature="e#7032#7033#0" expanded="false" />
-            <element signature="e#7060#7061#0" expanded="false" />
-            <element signature="e#7133#7134#0" expanded="false" />
-            <element signature="e#7161#7162#0" expanded="false" />
-            <element signature="e#7218#7219#0" expanded="false" />
-            <element signature="e#7246#7247#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/Powerup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -5835,15 +5793,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/core/build/libs/core-1.0.jar!/io/github/skulltah/colorseek/GameWorld/GameRenderer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22247706">
-          <caret line="325" column="0" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -5858,32 +5810,7 @@
     <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="492" column="0" selection-start-line="492" selection-start-column="0" selection-end-line="492" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="170" column="29" selection-start-line="170" selection-start-column="29" selection-end-line="170" selection-end-column="29" />
-          <folding>
-            <element signature="e#4264#4265#0" expanded="true" />
-            <element signature="e#4311#4312#0" expanded="true" />
-            <element signature="e#4339#4340#0" expanded="true" />
-            <element signature="e#4387#4388#0" expanded="true" />
-            <element signature="e#5581#5582#0" expanded="true" />
-            <element signature="e#5637#5638#0" expanded="true" />
-            <element signature="e#5670#5671#0" expanded="true" />
-            <element signature="e#5725#5726#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <caret line="484" column="0" selection-start-line="484" selection-start-column="0" selection-end-line="484" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -5899,7 +5826,7 @@
     <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/ScrollHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -5914,17 +5841,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameObjects/GodlikeShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5764706">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
           <folding>
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#1233#1234#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/AssetLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="323" column="1" selection-start-line="323" selection-start-column="1" selection-end-line="323" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#14945#14946#0" expanded="true" />
+            <element signature="e#14997#14998#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/Screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/InputHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PlayServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/io/github/skulltah/colorseek/AndroidLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="21" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/CSHelpers/PostGameEvaluator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/io/github/skulltah/colorseek/GameWorld/GameWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51428574">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#2944#3643#0" expanded="true" />
+            <element signature="e#3328#3570#0" expanded="true" />
+            <element signature="e#3569#3570#0" expanded="true" />
+            <element signature="e#3642#3643#0" expanded="true" />
+            <element signature="e#3712#3713#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3774#3775#0" expanded="true" />
+            <element signature="e#3806#3807#0" expanded="true" />
+            <element signature="e#3848#3849#0" expanded="true" />
+            <element signature="e#3879#3880#0" expanded="true" />
+            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#3936#3937#0" expanded="true" />
+            <element signature="e#3979#3980#0" expanded="true" />
+            <element signature="e#4013#4014#0" expanded="true" />
+            <element signature="e#4264#4265#0" expanded="true" />
+            <element signature="e#4311#4312#0" expanded="true" />
+            <element signature="e#4339#4340#0" expanded="true" />
+            <element signature="e#4387#4388#0" expanded="true" />
+            <element signature="e#5581#5582#0" expanded="true" />
+            <element signature="e#5637#5638#0" expanded="true" />
+            <element signature="e#5670#5671#0" expanded="true" />
+            <element signature="e#5725#5726#0" expanded="true" />
           </folding>
         </state>
       </provider>
