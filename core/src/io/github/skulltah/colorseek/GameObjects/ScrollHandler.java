@@ -172,8 +172,10 @@ public class ScrollHandler {
                     case White:
                         if (!collidesNonlethal(gameWorld.getPacman())) {
                             gameWorld.getPacman().eat(-2);
-                            gameWorld.getPacman().setIsSuper(false);
-                            AssetLoader.poison.play();
+                            if (gameWorld.getPacman().getIsSuper()) {
+                                gameWorld.getPacman().setIsSuper(false);
+                                AssetLoader.poison.play();
+                            }
                         }
                         break;
                 }

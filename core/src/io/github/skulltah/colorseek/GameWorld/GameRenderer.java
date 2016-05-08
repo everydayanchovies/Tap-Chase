@@ -363,6 +363,7 @@ public class GameRenderer {
         menuButtons.get(1).draw(batcher);
         menuButtons.get(2).draw(batcher, CSGame.playServices.isSignedIn());
         menuButtons.get(3).draw(batcher, CSGame.playServices.isSignedIn());
+        menuButtons.get(4).draw(batcher);
     }
 
     private void drawReady() {

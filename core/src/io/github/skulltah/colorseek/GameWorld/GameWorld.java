@@ -2,8 +2,12 @@ package io.github.skulltah.colorseek.GameWorld;
 
 import com.badlogic.gdx.utils.Timer;
 
+import de.tomgrill.gdxfacebook.core.GDXFacebook;
+import de.tomgrill.gdxfacebook.core.GDXFacebookConfig;
+import de.tomgrill.gdxfacebook.core.GDXFacebookSystem;
 import io.github.skulltah.colorseek.CS.CSGame;
 import io.github.skulltah.colorseek.CSHelpers.AssetLoader;
+import io.github.skulltah.colorseek.CSHelpers.FacebookHelper;
 import io.github.skulltah.colorseek.CSHelpers.PostGameEvaluator;
 import io.github.skulltah.colorseek.Constants.Values;
 import io.github.skulltah.colorseek.GameObjects.GodlikeShape;
@@ -21,6 +25,7 @@ public class GameWorld {
     private GameRenderer renderer;
     private PostGameEvaluator postGameEvaluator;
     private CSGame game;
+    private FacebookHelper facebook;
 
     private GameState currentState;
 
@@ -32,6 +37,14 @@ public class GameWorld {
         scroller = new ScrollHandler(game, this, midPointY + Values.GAME_HEIGHT_FROM_MIDDLEPOINT);
         postGameEvaluator = new PostGameEvaluator(game);
 //        ground = new Rectangle(0, midPointY + 66, 137, 11);
+
+        // Facebook
+        GDXFacebookConfig facebookConfig = new GDXFacebookConfig();
+        facebookConfig.APP_ID = "1005660309524792"; // required
+        facebookConfig.PREF_FILENAME = ".facebookSessionData"; // optional
+        facebookConfig.GRAPH_API_VERSION = "v2.5"; // optional, default is v2.5
+        GDXFacebook gdxFacebook = GDXFacebookSystem.install(facebookConfig);
+        this.facebook = new FacebookHelper(gdxFacebook, game);
     }
 
     public void update(float delta) {
@@ -205,6 +218,10 @@ public class GameWorld {
 
     public void setRenderer(GameRenderer renderer) {
         this.renderer = renderer;
+    }
+
+    public FacebookHelper getFacebook() {
+        return facebook;
     }
 
     public enum GameState {

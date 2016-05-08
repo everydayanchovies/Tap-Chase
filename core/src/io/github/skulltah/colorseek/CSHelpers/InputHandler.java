@@ -24,6 +24,7 @@ public class InputHandler implements InputProcessor {
     private SimpleButton retryButton;
     private SimpleButton leaderboardButton;
     private SimpleButton achievementsButton;
+    private SimpleButton fblikeButton;
 
     private float scaleFactorX;
     private float scaleFactorY;
@@ -65,10 +66,18 @@ public class InputHandler implements InputProcessor {
                 .7f,
                 AssetLoader.achievements,
                 AssetLoader.achievements);
+        fblikeButton = new SimpleButton(
+                Values.GAME_WIDTH / 2 - AssetLoader.fblike.getRegionWidth() * .4f / 2 + 00,
+                midPointY + 10,
+                AssetLoader.fblike.getRegionWidth(), AssetLoader.fblike.getRegionHeight(),
+                .4f,
+                AssetLoader.fblike,
+                AssetLoader.fblike);
         menuButtons.add(playButton);
         menuButtons.add(retryButton);
         menuButtons.add(leaderboardButton);
         menuButtons.add(achievementsButton);
+        menuButtons.add(fblikeButton);
     }
 
     @Override
@@ -93,6 +102,7 @@ public class InputHandler implements InputProcessor {
             retryButton.isTouchDown(screenX, screenY);
             leaderboardButton.isTouchDown(screenX, screenY);
             achievementsButton.isTouchDown(screenX, screenY);
+            fblikeButton.isTouchDown(screenX, screenY);
         }
 
         return true;
@@ -128,6 +138,11 @@ public class InputHandler implements InputProcessor {
             }
             if (achievementsButton.isTouchUp(screenX, screenY)) {
                 CSGame.playServices.showAchievement();
+                return true;
+            }
+            if (fblikeButton.isTouchUp(screenX, screenY)) {
+                game.actionResolver.showToast("Sharing your score...");
+                myWorld.getFacebook().postToUserWall(myWorld.getScore());
                 return true;
             }
         }

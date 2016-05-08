@@ -17,14 +17,17 @@ import io.github.skulltah.colorseek.CSHelpers.PlayServices;
 
 public class AndroidLauncher extends AndroidApplication implements PlayServices {
     private final static int requestCode = 1;
+    ActionResolverAndroid actionResolverAndroid;
     private GameHelper gameHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        actionResolverAndroid = new ActionResolverAndroid(this);
+
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-        initialize(new CSGame(this), config);
+        initialize(new CSGame(this, actionResolverAndroid), config);
 
         gameHelper = new GameHelper(this, GameHelper.CLIENT_GAMES);
         gameHelper.setConnectOnStart(false);

@@ -32,9 +32,9 @@ public class GodlikeShape extends Scrollable {
             double d = Math.random();
             if (d < 0.5)
                 // 50% chance of being here
-                AssetLoader.radar1.play(.5f);
+                AssetLoader.radar1.play(.3f * (float) Math.random());
             else
-                AssetLoader.radar2.play(.5f);
+                AssetLoader.radar2.play(.3f * (float) Math.random());
         }
     }
 

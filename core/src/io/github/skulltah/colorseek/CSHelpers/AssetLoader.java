@@ -25,7 +25,8 @@ public class AssetLoader {
             pipeTopUp_0, pipeTopUp_1, pipeTopUp_2,
             pipeTopDown_0, pipeTopDown_1, pipeTopDown_2,
             pipe_0, pipe_1, pipe_2,
-            square, triangle, circle;
+            square, triangle, circle,
+            fblike;
     public static TextureRegion[] food2Frames = new TextureRegion[5];
     public static TextureRegion[] food3Frames = new TextureRegion[5];
     public static TextureRegion[] food4Frames = new TextureRegion[5];
@@ -90,6 +91,9 @@ public class AssetLoader {
 
         circle = new TextureRegion(texture, (9 + 1) * 2, 254, 9, 9);
         circle.flip(false, true);
+
+        fblike = new TextureRegion(texture, 111, 230, 123, 35);
+        fblike.flip(false, true);
 
         food1 = new TextureRegion(texture, 0, 20, Textures.FOOD_SIZE, Textures.FOOD_SIZE);
         food1.flip(false, true);
