@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:2:1-29:12
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:2:1-42:12
 	xmlns:android
 		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:2:11-69
 	package
@@ -12,19 +12,19 @@ ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidMa
 		INJECTED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml
 		INJECTED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml
 	android:versionCode
-		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:4:11-34
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:4:11-35
 		INJECTED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml
 		INJECTED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:7:5-67
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:7:5-66
 	android:name
 		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:7:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:8:5-79
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:8:5-78
 	android:name
 		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:8:22-76
 application
-ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:10:5-27:19
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:10:5-40:19
 MERGED from [com.google.android.gms:play-services-games:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.0.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
@@ -43,6 +43,9 @@ MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Docu
 MERGED from [com.android.support:support-v4:23.0.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-plus:8.1.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.1.0/AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:23.0.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
+MERGED from [de.tomgrill.gdxfacebook:gdx-facebook-android:1.1.1] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/de.tomgrill.gdxfacebook/gdx-facebook-android/1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.7.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/AndroidManifest.xml:28:5-20
 MERGED from [com.android.support:support-v4:23.0.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:13:9-41
@@ -72,23 +75,39 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:22:17-76
 	android:name
 		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:22:27-74
+activity#com.facebook.FacebookActivity
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:26:9-30:54
+	android:label
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:30:19-51
+	android:configChanges
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:27:19-125
+	android:theme
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:29:19-78
+	android:name
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:26:19-63
 meta-data#com.google.android.gms.games.APP_ID
-ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:25:9-104
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:32:9-34:45
 	android:name
-		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:25:20-70
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:33:13-63
 	android:value
-		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:25:71-101
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:34:13-43
 meta-data#com.google.android.gms.version
-ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:26:9-122
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:35:9-37:68
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 	android:name
-		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:26:20-65
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:36:13-58
 	android:value
-		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:26:66-119
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:37:13-66
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:39:9-107
+	android:name
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:39:20-65
+	android:value
+		ADDED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml:39:66-105
 uses-sdk
 INJECTED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/AndroidManifest.xml:18:5-42
@@ -115,6 +134,9 @@ MERGED from [com.android.support:support-v4:23.0.0] /home/max/Documents/GIT/Andr
 MERGED from [com.google.android.gms:play-services-plus:8.1.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.1.0/AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-base:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:23.0.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
+MERGED from [de.tomgrill.gdxfacebook:gdx-facebook-android:1.1.1] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/de.tomgrill.gdxfacebook/gdx-facebook-android/1.1.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.7.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:support-v4:23.0.0] /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/AndroidManifest.xml

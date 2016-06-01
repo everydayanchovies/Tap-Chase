@@ -1,0 +1,36 @@
+-injars /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/transforms/jarMerging/release/jars/1/1f/combined.jar
+-outjars /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/multi-dex/release/componentClasses.jar
+
+-libraryjars /home/max/Android/Sdk/build-tools/23.0.2/lib/shrinkedAndroid.jar
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **,com.android.tools.fd.**,android.support.multidex.MultiDexExtractor
+-dontwarn **
+-printconfiguration /home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/multi-dex/release/components.flags
+
+
+-keep class io.github.skulltah.colorseek.AndroidLauncher {
+    <init>();
+}
+
+-keep class com.facebook.FacebookActivity {
+    <init>();
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.fd.** {
+    <fields>;
+    <methods>;
+}

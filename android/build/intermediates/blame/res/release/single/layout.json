@@ -1,0 +1,126 @@
+[
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_mode_bar.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/messenger_button_send_white_small.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/messenger_button_send_white_small.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_list_menu_item_radio.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/messenger_button_send_blue_small.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/messenger_button_send_blue_small.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_bar_home.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_bar_home.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_menu_item_layout.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/com_facebook_tooltip_bubble.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/com_facebook_tooltip_bubble.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/messenger_button_send_blue_large.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/messenger_button_send_blue_large.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_list_menu_item_icon.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_expanded_menu_layout.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/messenger_button_send_white_large.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/messenger_button_send_white_large.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_mode_close_item.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_mode_close_item.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_menu_layout.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_bar_title_item.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_bar_decor_overlay.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_bar_decor_overlay.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/com_facebook_login_fragment.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/com_facebook_login_fragment.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/com_facebook_activity_layout.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/com_facebook_activity_layout.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_activity_chooser_view_include.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_activity_chooser_view_include.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_bar_tab.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_bar_tab.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/messenger_button_send_blue_round.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/messenger_button_send_blue_round.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_bar_tabbar.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_bar_tabbar.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_search_view.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/abc_action_bar_decor_include.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/layout/abc_action_bar_decor_include.xml"
+    },
+    {
+        "merged": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/layout/messenger_button_send_white_round.xml",
+        "source": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/layout/messenger_button_send_white_round.xml"
+    }
+]

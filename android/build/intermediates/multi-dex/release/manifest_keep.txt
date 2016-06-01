@@ -1,0 +1,12 @@
+-keep class io.github.skulltah.colorseek.AndroidLauncher { <init>(); }
+-keep class com.facebook.FacebookActivity { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}
+-keep class com.android.tools.fd.** {
+    *;
+}
+-dontnote com.android.tools.fd.**,android.support.multidex.MultiDexExtractor

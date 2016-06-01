@@ -1,0 +1,1109 @@
+[
+    {
+        "outputFile": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/res/merged/release/values-hu/values-hu.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 107,
+                    "endOffset": 208
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 107,
+                        "endOffset": 159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 213,
+                    "endColumn": 104,
+                    "endOffset": 313
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 164,
+                        "endColumn": 104,
+                        "endOffset": 264
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 318,
+                    "endColumn": 114,
+                    "endOffset": 428
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 269,
+                        "endColumn": 114,
+                        "endOffset": 379
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 433,
+                    "endColumn": 83,
+                    "endOffset": 512
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 384,
+                        "endColumn": 83,
+                        "endOffset": 463
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 517,
+                    "endColumn": 111,
+                    "endOffset": 624
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 468,
+                        "endColumn": 111,
+                        "endOffset": 575
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 629,
+                    "endColumn": 129,
+                    "endOffset": 754
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 580,
+                        "endColumn": 129,
+                        "endOffset": 705
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 759,
+                    "endColumn": 109,
+                    "endOffset": 864
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 710,
+                        "endColumn": 109,
+                        "endOffset": 815
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 869,
+                    "endColumn": 110,
+                    "endOffset": 975
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 820,
+                        "endColumn": 110,
+                        "endOffset": 926
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 980,
+                    "endColumn": 99,
+                    "endOffset": 1075
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 931,
+                        "endColumn": 99,
+                        "endOffset": 1026
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1080,
+                    "endColumn": 110,
+                    "endOffset": 1186
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1031,
+                        "endColumn": 110,
+                        "endOffset": 1137
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1191,
+                    "endColumn": 107,
+                    "endOffset": 1294
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1142,
+                        "endColumn": 107,
+                        "endOffset": 1245
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1299,
+                    "endColumn": 118,
+                    "endOffset": 1413
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1250,
+                        "endColumn": 118,
+                        "endOffset": 1364
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1418,
+                    "endColumn": 133,
+                    "endOffset": 1547
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-hu/values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1369,
+                        "endColumn": 133,
+                        "endOffset": 1498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1552,
+                    "endColumn": 117,
+                    "endOffset": 1665
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 161,
+                        "endColumn": 117,
+                        "endOffset": 274
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1670,
+                    "endColumn": 149,
+                    "endOffset": 1815
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 279,
+                        "endColumn": 149,
+                        "endOffset": 424
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1820,
+                    "endColumn": 93,
+                    "endOffset": 1909
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 429,
+                        "endColumn": 93,
+                        "endOffset": 518
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1914,
+                    "endColumn": 67,
+                    "endOffset": 1977
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 523,
+                        "endColumn": 67,
+                        "endOffset": 586
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1982,
+                    "endColumn": 70,
+                    "endOffset": 2048
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 591,
+                        "endColumn": 70,
+                        "endOffset": 657
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 2053,
+                    "endColumn": 60,
+                    "endOffset": 2109
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 662,
+                        "endColumn": 60,
+                        "endOffset": 718
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2114,
+                    "endColumn": 71,
+                    "endOffset": 2181
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 723,
+                        "endColumn": 71,
+                        "endOffset": 790
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 2186,
+                    "endColumn": 78,
+                    "endOffset": 2260
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 795,
+                        "endColumn": 78,
+                        "endOffset": 869
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 2265,
+                    "endColumn": 108,
+                    "endOffset": 2369
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 874,
+                        "endColumn": 108,
+                        "endOffset": 978
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 2374,
+                    "endColumn": 79,
+                    "endOffset": 2449
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 983,
+                        "endColumn": 79,
+                        "endOffset": 1058
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 2454,
+                    "endColumn": 79,
+                    "endOffset": 2529
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1063,
+                        "endColumn": 79,
+                        "endOffset": 1138
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 2534,
+                    "endColumn": 88,
+                    "endOffset": 2618
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1143,
+                        "endColumn": 88,
+                        "endOffset": 1227
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 2623,
+                    "endColumn": 114,
+                    "endOffset": 2733
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1232,
+                        "endColumn": 114,
+                        "endOffset": 1342
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 2738,
+                    "endColumn": 64,
+                    "endOffset": 2798
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1347,
+                        "endColumn": 64,
+                        "endOffset": 1407
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 2803,
+                    "endColumn": 68,
+                    "endOffset": 2867
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1412,
+                        "endColumn": 68,
+                        "endOffset": 1476
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 2872,
+                    "endColumn": 160,
+                    "endOffset": 3028
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.7.0/res/values-hu/values-hu.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1481,
+                        "endColumn": 160,
+                        "endOffset": 1637
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 3033,
+                    "endColumn": 309,
+                    "endOffset": 3338
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 3748,
+                        "endColumn": 313,
+                        "endOffset": 4057
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 3343,
+                    "endColumn": 140,
+                    "endOffset": 3479
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1427,
+                        "endColumn": 140,
+                        "endOffset": 1563
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 3484,
+                    "endColumn": 215,
+                    "endOffset": 3695
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1207,
+                        "endColumn": 219,
+                        "endOffset": 1422
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 3700,
+                    "endColumn": 139,
+                    "endOffset": 3835
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1067,
+                        "endColumn": 139,
+                        "endOffset": 1202
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 3840,
+                    "endColumn": 140,
+                    "endOffset": 3976
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 926,
+                        "endColumn": 140,
+                        "endOffset": 1062
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 3981,
+                    "endColumn": 232,
+                    "endOffset": 4209
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 450,
+                        "endColumn": 236,
+                        "endOffset": 682
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 4214,
+                    "endColumn": 234,
+                    "endOffset": 4444
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 687,
+                        "endColumn": 238,
+                        "endOffset": 921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 4449,
+                    "endColumn": 139,
+                    "endOffset": 4584
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 310,
+                        "endColumn": 139,
+                        "endOffset": 445
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 4589,
+                    "endColumn": 176,
+                    "endOffset": 4761
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 2932,
+                        "endColumn": 176,
+                        "endOffset": 3104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 4766,
+                    "endColumn": 121,
+                    "endOffset": 4883
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 2810,
+                        "endColumn": 121,
+                        "endOffset": 2927
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 4888,
+                    "endColumn": 184,
+                    "endOffset": 5068
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 2625,
+                        "endColumn": 184,
+                        "endOffset": 2805
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 5073,
+                    "endColumn": 119,
+                    "endOffset": 5188
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 2505,
+                        "endColumn": 119,
+                        "endOffset": 2620
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 5193,
+                    "endColumn": 139,
+                    "endOffset": 5328
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 170,
+                        "endColumn": 139,
+                        "endOffset": 305
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 5333,
+                    "endColumn": 180,
+                    "endOffset": 5509
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 4526,
+                        "endColumn": 180,
+                        "endOffset": 4702
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 5514,
+                    "endColumn": 149,
+                    "endOffset": 5659
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 4376,
+                        "endColumn": 149,
+                        "endOffset": 4521
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 5664,
+                    "endColumn": 181,
+                    "endOffset": 5841
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 4194,
+                        "endColumn": 181,
+                        "endOffset": 4371
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 5846,
+                    "endColumn": 131,
+                    "endOffset": 5973
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 4062,
+                        "endColumn": 131,
+                        "endOffset": 4189
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 5978,
+                    "endColumn": 294,
+                    "endOffset": 6268
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/res/values-hu/common_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 170,
+                        "endColumn": 298,
+                        "endOffset": 464
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 6273,
+                    "endColumn": 294,
+                    "endOffset": 6563
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 3239,
+                        "endColumn": 298,
+                        "endOffset": 3533
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 6568,
+                    "endColumn": 129,
+                    "endOffset": 6693
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 3109,
+                        "endColumn": 129,
+                        "endOffset": 3234
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 6698,
+                    "endColumn": 109,
+                    "endOffset": 6803
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 3538,
+                        "endColumn": 109,
+                        "endOffset": 3643
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 6808,
+                    "endColumn": 215,
+                    "endOffset": 7019
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1707,
+                        "endColumn": 219,
+                        "endOffset": 1922
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 7024,
+                    "endColumn": 138,
+                    "endOffset": 7158
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1568,
+                        "endColumn": 138,
+                        "endOffset": 1702
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 7163,
+                    "endColumn": 230,
+                    "endOffset": 7389
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 2270,
+                        "endColumn": 234,
+                        "endOffset": 2500
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 7394,
+                    "endColumn": 140,
+                    "endOffset": 7530
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 2129,
+                        "endColumn": 140,
+                        "endOffset": 2265
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 7535,
+                    "endColumn": 201,
+                    "endOffset": 7732
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1927,
+                        "endColumn": 201,
+                        "endOffset": 2124
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 7737,
+                    "endColumn": 99,
+                    "endOffset": 7832
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 3648,
+                        "endColumn": 99,
+                        "endOffset": 3743
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 7837,
+                    "endColumn": 97,
+                    "endOffset": 7930
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 4707,
+                        "endColumn": 97,
+                        "endOffset": 4800
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 7935,
+                    "endColumn": 117,
+                    "endOffset": 8048
+                },
+                "from": {
+                    "file": "/home/max/Documents/GIT/Android/Bitbucket/ColorSeek/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/values-hu/base_strings.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 4805,
+                        "endColumn": 117,
+                        "endOffset": 4918
+                    }
+                }
+            }
+        ]
+    }
+]
